@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>High-Performance PC Components | DRAXEN Gaming Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap&amp;family=JetBrains+Mono:wght@400;500&display=swap&amp;family=Geist:wght@400;50&display=swap0&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#004f54",
+                    "tertiary-fixed": "#ffdadb",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-fixed": "#40000f",
+                    "background": "#131313",
+                    "primary-fixed-dim": "#00dbe7",
+                    "on-primary-fixed": "#002022",
+                    "on-surface-variant": "#b9cacb",
+                    "surface-container-low": "#1c1b1b",
+                    "outline": "#849495",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#91002d",
+                    "on-secondary-fixed": "#2c0051",
+                    "tertiary-container": "#ffcfd2",
+                    "surface-variant": "#353534",
+                    "tertiary-fixed-dim": "#ffb2b8",
+                    "surface-bright": "#3a3939",
+                    "on-tertiary-container": "#c0003e",
+                    "on-surface": "#e5e2e1",
+                    "outline-variant": "#3a494b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed-variant": "#6700b5",
+                    "on-background": "#e5e2e1",
+                    "inverse-primary": "#00696f",
+                    "on-tertiary": "#67001d",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-container": "#00f2ff",
+                    "primary": "#e1fdff",
+                    "on-primary-container": "#006a71",
+                    "tertiary": "#fff5f5",
+                    "secondary": "#dcb8ff",
+                    "on-primary": "#00363a",
+                    "on-secondary-container": "#dcb7ff",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#480081",
+                    "surface-dim": "#131313",
+                    "surface-container-highest": "#353534",
+                    "surface-tint": "#00dbe7",
+                    "secondary-fixed": "#efdbff",
+                    "inverse-surface": "#e5e2e1",
+                    "surface": "#131313",
+                    "secondary-container": "#7701d0",
+                    "secondary-fixed-dim": "#dcb8ff",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#74f5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1440px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "body-md": ["Geist"],
+                    "headline-lg-mobile": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "body-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .cyber-notch {
+            clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+        }
+        .glass-panel:hover {
+            border-color: rgba(0, 242, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+        }
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(0, 242, 255, 0.2), transparent);
+            animation: scan 3s linear infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+  <meta name="description" content="Shop elite computer components: motherboards, CPUs, RAM, power supplies, and cases optimized for high-refresh gaming."/>
+  <link rel="canonical" href="https://draxengaming.com/pc-parts"/>
+
+  <meta property="og:title" content="High-Performance PC Components | DRAXEN Gaming Store"/>
+  <meta property="og:description" content="Shop elite computer components: motherboards, CPUs, RAM, power supplies, and cases optimized for high-refresh gaming."/>
+  <meta property="og:url" content="https://draxengaming.com/pc-parts"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="DRAXEN Gaming"/>
+  <meta property="og:image" content="https://draxengaming.com/images/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="High-Performance PC Components | DRAXEN Gaming Store"/>
+  <meta name="twitter:description" content="Shop elite computer components: motherboards, CPUs, RAM, power supplies, and cases optimized for high-refresh gaming."/>
+  <meta name="twitter:image" content="https://draxengaming.com/images/og-image.jpg"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<nav class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-black tracking-tighter text-primary-container drop-shadow-[0_0_10px_rgba(0,242,255,0.8)]">
+                DRAXEN
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary-container border-b-2 border-primary-container pb-1 font-body-md text-body-md" href="/">Shop</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/community">Community</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group hidden lg:block">
+<input class="bg-surface-container-highest border-b-2 border-outline-variant focus:border-primary-container px-4 py-2 font-label-mono text-label-mono outline-none transition-all w-64" placeholder="Search components..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant">search</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 cyber-notch font-headline-md text-[14px] font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all duration-300 active:scale-95">
+                    JOIN DISCORD
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[70vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hardware internals" class="w-full h-full object-cover opacity-60 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9IfZi-e6ACUHiINuOX2IfwapE8MJxn2iLrZiCkEF_zebFiQK6eM43-YvZA2tTqElHOw-faUNCU6r2zu-663VB4f4vccX23An6h8tSYDqYcPg2EGsPS0355Pn-tPXLHrXNN0eX7ohFR6K9iaFJrojH13qzC7kIh_6u1O-J2myn9tlByEAsFgX6IoO4ijybNZrPbZme0ME-b4ICR0Y5fDAuwNl2TOX0uITTg3BurEeHyFM02S4Utu6aXJKT7ALmkdFtRzcXw7wcnDw"/ loading="lazy">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl">
+<span class="font-label-mono text-label-mono text-primary-container mb-4 block tracking-[0.3em]">CORE INFRASTRUCTURE</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6 leading-[1] drop-shadow-lg">FORGE YOUR <span class="text-primary-container">LEGACY</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">Engineered for the elite. Browse our curated selection of next-gen silicon, high-frequency memory, and thermal solutions designed to break limits.</p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 cyber-notch font-bold hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,242,255,0.3)]">EXPLORE GPU STOCK</button>
+<button class="border border-primary-container/40 text-primary-container px-10 py-4 cyber-notch font-bold hover:bg-primary-container/10 transition-all">SYSTEM BUILDER</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Marketplace Area -->
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 lg:grid-cols-4 gap-gutter">
+<!-- Sidebar Filtering -->
+<aside class="lg:col-span-1 space-y-8">
+<div class="glass-panel p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">filter_list</span> Filters
+                    </h3>
+<div class="space-y-8">
+<!-- Category Filter -->
+<div>
+<label class="font-label-mono text-label-mono text-primary-container block mb-4">CATEGORIES</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 bg-surface border-primary/40 rounded-none checked:bg-primary-container" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Graphics Cards</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 bg-surface border-primary/40 rounded-none checked:bg-primary-container" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Processors</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 bg-surface border-primary/40 rounded-none checked:bg-primary-container" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Motherboards</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 bg-surface border-primary/40 rounded-none checked:bg-primary-container" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Memory / RAM</span>
+</label>
+</div>
+</div>
+<!-- VRAM Filter -->
+<div>
+<label class="font-label-mono text-label-mono text-primary-container block mb-4">VRAM CAPACITY</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 border border-outline-variant font-label-mono text-label-mono hover:border-primary-container transition-colors">8GB</button>
+<button class="py-2 border border-primary-container text-primary-container font-label-mono text-label-mono">12GB</button>
+<button class="py-2 border border-outline-variant font-label-mono text-label-mono hover:border-primary-container transition-colors">16GB</button>
+<button class="py-2 border border-outline-variant font-label-mono text-label-mono hover:border-primary-container transition-colors">24GB</button>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<label class="font-label-mono text-label-mono text-primary-container block mb-4">PRICE RANGE</label>
+<input class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer accent-primary-container" type="range"/>
+<div class="flex justify-between mt-2 font-label-mono text-[12px] text-on-surface-variant">
+<span>$0</span>
+<span>$4,000+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Setup Card -->
+<div class="relative overflow-hidden border border-primary-container/20 p-6 group">
+<img alt="PC Setup" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="A professional e-sports gaming setup in a dark room with vibrant teal and magenta RGB lighting hitting the walls. High-performance peripherals like a mechanical keyboard and precision mouse are centered on a large desk mat. The atmosphere is intense and focused, reflecting a high-tier gaming environment with cutting-edge technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwpxLJoXdKBTeI5p-wCYFJ8zZUXORDR1RJRI88lxKWrMyTR_yHkM5h7cj96eaVGiiTc_keiBJf-M7eob0qfMRRIha4JCqlXEbD_Pjpc0OmsZWtzO_qG71PMddnAjeugjq_DE5t5cE86ctAAWlmg3levBYKUgsvlEFNQYhqdcfxxJxRANkMJZk8XLxsVF_CeRCyeczCWzVrvnpleqyqqcwYWTvvsxEAUaUJ7_Z-owPWmOBKloVlqnSmaJthWjDY92IzyOZFyes73cU"/ loading="lazy">
+<div class="relative z-10">
+<h4 class="font-headline-md text-white mb-2">Build of the Month</h4>
+<p class="font-body-md text-on-surface-variant mb-4">Check out how the community is utilizing our flagship components.</p>
+<a class="text-primary-container font-label-mono flex items-center gap-2" href="#">VIEW GALLERY <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="lg:col-span-3">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-white">Latest <span class="text-primary-container">Arrivals</span></h2>
+<div class="flex gap-4">
+<select class="bg-surface border-outline-variant font-label-mono text-label-mono text-on-surface-variant px-4 py-2 outline-none focus:border-primary-container">
+<option>Sort: Popularity</option>
+<option>Price: Low to High</option>
+<option>Newest First</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product 1 -->
+<div class="glass-panel group relative flex flex-col h-full">
+<div class="relative h-56 overflow-hidden p-6 bg-surface-container-low/50">
+<img alt="RTX 4090" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A high-end graphics card with triple-fan cooling system and integrated RGB lighting glowing in neon cyan and purple. The card is presented in a studio setting with a dark backdrop and sharp lighting that highlights its metallic textures and complex internal cooling fins. Cinematic and high-tech product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-1xq--QvIF0WCacS8r84KQ8YG8MFQISmNZKjgP-MtX3_6ozBS-g9OZ9UDIJcMHDoBRyotJnvt33-GHIakXDqfB_ssPg7jCNjmV0MT3yT85Fhjizy_nvKTCyT_50NN1ygbyKwXgdqzoSZaQKeGwy02I0VusVS5aYO_Oq6qUTfLx2nb9FdaPHLLXoh13JjmXgmy5tLL3Up73cikBEWrCxE36qil-Hs4qrKrgBnFoVvmi8HkD4V2IBVV5X6u5l9Aw6Nqzh6HunAk-wI"/ loading="lazy">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-mono text-[10px] px-2 py-1">IN STOCK</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-white">NVIDIA GeForce RTX 4090</h3>
+<span class="font-label-mono text-primary-container">$1,699.99</span>
+</div>
+<div class="space-y-1 mb-6 flex-grow">
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Architecture:</span>
+<span class="text-white">Ada Lovelace</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">VRAM:</span>
+<span class="text-white">24GB G6X</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Clock:</span>
+<span class="text-white">2.52 GHz</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-white py-3 font-bold cyber-notch hover:bg-outline-variant transition-colors">DETAILS</button>
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 font-bold cyber-notch hover:shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all">CONFIGURE</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="glass-panel group relative flex flex-col h-full">
+<div class="relative h-56 overflow-hidden p-6 bg-surface-container-low/50">
+<img alt="Intel i9" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A professional-grade computer processor CPU chip shown in a micro-photography close-up. The golden pins and metallic heat spreader are clearly visible, with neon blue light reflecting off its surfaces. The setting is sterile and futuristic, emphasizing the precision engineering and high-performance capabilities of modern silicon technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHCvZhlCglXnnqgucKUCIYm9CIia_5WDlnf83bcXwhWsuvWDpFUxHPzqXum-IQ6Xy33jd6yt-VFZVOl5RLXXofnNqZkObwk8qZf68TFlXjyfbKAl--KS8kCydwx7gBoE34l-bznkiZL9Gz-36I_1vqaiqBONj8SOUQCLtvpqZM2q6RGUpmCaslAp-TqfbV-_tO05OUcKAwg8W-IJSY_KGrOVW0qC7gehk92k8r96ABiCAjTuOsa_Xrj1pyDHCm4Q-C9SWxEXlO2DE"/ loading="lazy">
+<div class="absolute top-4 left-4 bg-error-container text-on-error-container font-label-mono text-[10px] px-2 py-1">LIMITED</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-white">Intel Core i9-14900K</h3>
+<span class="font-label-mono text-primary-container">$589.00</span>
+</div>
+<div class="space-y-1 mb-6 flex-grow">
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Cores:</span>
+<span class="text-white">24 (8P + 16E)</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Socket:</span>
+<span class="text-white">LGA 1700</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Max Turbo:</span>
+<span class="text-white">6.0 GHz</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-white py-3 font-bold cyber-notch hover:bg-outline-variant transition-colors">DETAILS</button>
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 font-bold cyber-notch hover:shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all">ADD</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="glass-panel group relative flex flex-col h-full">
+<div class="relative h-56 overflow-hidden p-6 bg-surface-container-low/50">
+<img alt="Motherboard" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A high-performance gaming motherboard featuring sleek black armor plates and vibrant neon RGB strips integrated into the heatsinks. The intricate circuitry and silver-accented PCIe slots are highlighted by dramatic, multi-colored atmospheric lighting. The design is hyper-modern and aggressive, suitable for a flagship gaming rig." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0AzMGcHAAVjHg9fowmCHo8Wsp78dwoN0Hy3ikYXYyYBHXnpZtGdzhkQLmxg_6q35eV0sfM3OWkgBvG3KPj-N_622ko-bKjZloYOCLqMYKRqwz5uv98NsQazmcQ4uWJhK0AbOCa-51vRxHdck3mDOoyt3h29VIr7kawKpyKbI91uUDm1djI9MGn9s3q6ZRZAcKH3PkWYB1RnmTh7L1z3_UD6T-zPmGAuoD0up5_EC1p0hZ9uAqfQ_TuoTNqVdcT8AxsXlMy1RY27w"/ loading="lazy">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-mono text-[10px] px-2 py-1">BEST SELLER</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-white">ROG Maximus Z790 Hero</h3>
+<span class="font-label-mono text-primary-container">$629.99</span>
+</div>
+<div class="space-y-1 mb-6 flex-grow">
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Chipset:</span>
+<span class="text-white">Intel Z790</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Memory:</span>
+<span class="text-white">DDR5 7800+</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Networking:</span>
+<span class="text-white">WiFi 6E</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-white py-3 font-bold cyber-notch hover:bg-outline-variant transition-colors">DETAILS</button>
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 font-bold cyber-notch hover:shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all">ADD</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="glass-panel group relative flex flex-col h-full">
+<div class="relative h-56 overflow-hidden p-6 bg-surface-container-low/50">
+<img alt="DDR5 RAM" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 opacity-50 grayscale" data-alt="Close-up of high-speed DDR5 RAM modules with diffuse RGB light bars glowing along the top edge. The heat spreaders have a brushed aluminum finish that catches reflections of neon purple and blue. The composition is sleek and technical, emphasizing the speed and aesthetic appeal of modern computer memory components." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaayRmaapQaDDhhyhtP79X-I-_WOfkXD6e6sV4hLrXcnD_GFfGZEkWLujPfq4aToBRB2_dZsfah6rhZXKLs15gVAOhOkSr3Vl4C7SBJYxcxm78BUJxL-2sMNkIpVZwyItm2gkQ_UacH4AyKKqyTQudN1X0d_qy3oFJU8CbfW7FUpaTbcOuvHgSGbqP1tIeTVTyzkJ4x1cumyjvkKYc__YxRw6YW2-uQsToYq1_ltYmi5dtS8kc7jQWyx1QaOtXc2Iz9XtdMyQE6_w"/ loading="lazy">
+<div class="absolute inset-0 flex items-center justify-center bg-background/60 backdrop-blur-[2px]">
+<span class="font-headline-md text-white tracking-widest">OUT OF STOCK</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-white">Dominator Platinum 64GB</h3>
+<span class="font-label-mono text-on-surface-variant">$349.99</span>
+</div>
+<div class="space-y-1 mb-6 flex-grow">
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Type:</span>
+<span class="text-white">DDR5</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Speed:</span>
+<span class="text-white">6400MT/s</span>
+</div>
+<div class="flex justify-between font-label-mono text-[12px]">
+<span class="text-on-surface-variant">Latency:</span>
+<span class="text-white">CL32</span>
+</div>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface-variant py-3 font-bold cyber-notch cursor-not-allowed">NOTIFY ME</button>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div class="mt-12 flex justify-center">
+<button class="group flex items-center gap-4 text-primary-container font-label-mono tracking-widest px-8 py-4 border border-primary-container/20 hover:bg-primary-container/10 transition-all">
+                        SYNCHRONIZING MORE DATA
+                        <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">sync</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Technical Specs Ticker -->
+<div class="w-full bg-surface-container-lowest border-y border-primary/10 py-3 overflow-hidden whitespace-nowrap relative">
+<div class="scanline"></div>
+<div class="inline-block animate-[scroll_40s_linear_infinite] font-label-mono text-[12px] text-primary/60">
+<span class="mx-12">SYSTEM_STATUS: NOMINAL</span>
+<span class="mx-12">LATENCY: 0.14ms</span>
+<span class="mx-12">UPTIME: 99.99%</span>
+<span class="mx-12">CORE_TEMP: 32°C</span>
+<span class="mx-12">THROUGHPUT: 48GB/S</span>
+<span class="mx-12">ENCRYPTION: AES-256 BIT</span>
+<span class="mx-12">NODE: DXN-MARS-01</span>
+<span class="mx-12">KERNEL: STABLE</span>
+<span class="mx-12">DATA_SYNC: ACTIVE</span>
+</div>
+<div class="inline-block animate-[scroll_40s_linear_infinite] font-label-mono text-[12px] text-primary/60">
+<span class="mx-12">SYSTEM_STATUS: NOMINAL</span>
+<span class="mx-12">LATENCY: 0.14ms</span>
+<span class="mx-12">UPTIME: 99.99%</span>
+<span class="mx-12">CORE_TEMP: 32°C</span>
+<span class="mx-12">THROUGHPUT: 48GB/S</span>
+<span class="mx-12">ENCRYPTION: AES-256 BIT</span>
+<span class="mx-12">NODE: DXN-MARS-01</span>
+<span class="mx-12">KERNEL: STABLE</span>
+<span class="mx-12">DATA_SYNC: ACTIVE</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-16 pb-8 bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">DRAXEN</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The definitive destination for high-end gaming architecture and custom engineered solutions.</p>
+</div>
+<div>
+<h4 class="font-label-mono text-white mb-6">RESOURCES</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Hardware</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-mono text-white mb-6">COMMAND CENTER</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">My Builds</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors font-body-md text-body-md" href="#">Global Stats</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-mono text-white mb-6">NEWSLETTER</h4>
+<div class="flex gap-2">
+<input class="bg-surface-container-high border-b border-primary/20 px-3 py-2 font-label-mono text-label-mono w-full focus:border-primary transition-all outline-none" placeholder="ENT_EMAIL" type="email"/>
+<button class="bg-primary-container text-on-primary-container p-2 cyber-notch">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="font-label-mono text-label-mono text-on-surface-variant opacity-50 uppercase">© 2024 DRAXEN GAMING. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Header blur adjustment on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-3');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-3');
+            }
+        });
+
+        // Add scroll animation keyframes dynamically
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+  <script src="/shared.js"></script>
+</body></html>
