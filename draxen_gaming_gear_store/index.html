@@ -4,7 +4,7 @@
 <head>
     <!-- Meta: Core SEO & Accessibility -->
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
     <meta name="description"
         content="Premium gaming equipment, custom PC builds, and gaming accessories. Expert support available 24/7. Fast global delivery." />
     <meta name="keywords"
@@ -208,6 +208,7 @@
             top: -100px;
             left: 0;
             animation: scanline 8s linear infinite;
+            pointer-events: none;
         }
 
         @keyframes scanline {
@@ -238,29 +239,233 @@
             background: #00f2ff;
             border-radius: 4px;
         }
+
+        /* Mobile Menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: rgba(19, 19, 19, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(0, 242, 255, 0.2);
+            z-index: 60;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 55;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem !important;
+                line-height: 1.1 !important;
+            }
+
+            .display-lg {
+                font-size: 2.5rem !important;
+            }
+
+            .headline-lg {
+                font-size: 1.75rem !important;
+            }
+
+            .px-margin-desktop {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .grid-cols-2.md\\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .md\\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .md\\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .hero-cta button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .glass-card.aspect-square {
+                aspect-ratio: auto;
+                padding: 16px;
+                min-height: 120px;
+            }
+
+            section.py-24 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.6rem !important;
+            }
+
+            .display-lg {
+                font-size: 2rem !important;
+            }
+
+            .headline-lg {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        /* YouTube video embed responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Form styling */
+        .form-input {
+            background: rgba(32, 31, 31, 0.8);
+            border: 1px solid rgba(58, 73, 75, 0.5);
+            color: #e5e2e1;
+            padding: 12px 16px;
+            border-radius: 4px;
+            width: 100%;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #00f2ff;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: rgba(132, 148, 149, 0.5);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
     </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<body
+    class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
     <canvas class="fixed inset-0 -z-10 pointer-events-none opacity-40" id="particles-canvas"></canvas>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="flex items-center justify-between mb-8">
+            <span class="font-headline-md text-headline-md text-primary-container">DRAXEN</span>
+            <button onclick="closeMobileNav()"
+                class="material-symbols-outlined text-primary-container text-3xl">close</button>
+        </div>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/">Home</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/accessories">Accessories</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/pc-parts">PC Parts</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/custom-pc">Custom PCs</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/about">About</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/community">Community</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/contact">Contact</a>
+        <div class="mt-auto pt-8">
+            <a href="https://youtube.com/@draxengaming" target="_blank"
+                class="flex items-center gap-3 text-error hover:text-red-400 transition-colors font-body-md py-3">
+                <span class="material-symbols-outlined">play_circle</span>
+                YouTube Channel
+            </a>
+            <a href="https://discord.com/invite/draxengaming" target="_blank"
+                class="flex items-center gap-3 text-primary-container hover:text-cyan-300 transition-colors font-body-md py-3">
+                <span class="material-symbols-outlined">forum</span>
+                Join Discord
+            </a>
+        </div>
+    </nav>
+
     <!-- TopNavBar with Semantic Navigation -->
     <header
         class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
         role="banner">
-        <div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
-            <div class="flex items-center gap-4">
-                <img alt="DRAXEN Gaming - Elite Gaming Gear Logo" class="h-10 w-auto"
+        <div
+            class="flex items-center justify-between px-margin-mobile md:px-margin-desktop py-3 md:py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3 md:gap-4">
+                <img alt="DRAXEN Gaming - Elite Gaming Gear Logo" class="h-8 md:h-10 w-auto"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyIbrzrT5AUHaM8al4e8q9Lra1G5cNP2mYj3F3Y20-9eQSOK2qvDpkr5Dcw2PtJfiSJzbihKjSZSyJr8CwPiIH69oEPZ36U9jzf-Ap8nYhOIarLpN9YhAgqpv1DKK2k9G1XZRWlOmXN7XENNOHGXYsCrVmcoXQ74AKHepXMvE7cIAfM4xf9pF7hYiMLO0Cn5qNBMThs6mFzwAA6kvZ1DJLsMGVkkydxL29x00btYW5MhYhqoyg8IyTNKC_-brIOWRyd-CkTqMWN-s"
-                    / loading="lazy">
+                    loading="lazy">
                 <span
-                    class="font-headline-md text-headline-md font-black tracking-tighter text-primary-container drop-shadow-[0_0_10px_rgba(0,242,255,0.8)]"><a
+                    class="font-headline-md text-xl md:text-headline-md font-black tracking-tighter text-primary-container drop-shadow-[0_0_10px_rgba(0,242,255,0.8)]"><a
                         href="/" class="hover:text-secondary transition-colors">DRAXEN</a></span>
             </div>
-            <nav class="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-                    href="/">Home</a>
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
                 <a class="font-body-md text-body-md text-primary-container border-b-2 border-primary-container pb-1 transition-all"
+                    href="/">Home</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
                     href="/accessories">Accessories</a>
                 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
                     href="/pc-parts">PC Parts</a>
@@ -273,138 +478,146 @@
                 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
                     href="/contact">Contact</a>
             </nav>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 md:gap-4">
                 <a href="/cart"><button
-                        class="material-symbols-outlined text-primary-container hover:scale-110 transition-transform cursor-pointer"
+                        class="material-symbols-outlined text-primary-container hover:scale-110 transition-transform cursor-pointer text-2xl"
                         aria-label="Shopping cart">shopping_cart</button></a>
                 <button
-                    class="material-symbols-outlined text-primary-container hover:scale-110 transition-transform cursor-pointer"
+                    class="material-symbols-outlined text-primary-container hover:scale-110 transition-transform cursor-pointer text-2xl"
                     aria-label="Search products">search</button>
-                <button
-                    class="bg-primary-container text-on-primary-container px-6 py-2 font-label-mono text-label-mono font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all duration-300 active:scale-95"
-                    aria-label="Join DRAXEN Discord community">Join Discord</button>
+                <button onclick="openMobileNav()"
+                    class="md:hidden material-symbols-outlined text-primary-container text-2xl"
+                    aria-label="Open menu">menu</button>
+                <a href="/contact"
+                    class="hidden md:inline-block bg-primary-container text-on-primary-container px-4 lg:px-6 py-2 font-label-mono text-label-mono font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all duration-300 active:scale-95"
+                    aria-label="Contact DRAXEN Gaming">Contact</a>
             </div>
         </div>
     </header>
-    <main class="pt-20" role="main">
+    <main class="pt-16 md:pt-20" role="main">
         <!-- Hero Section with Schema Markup -->
-        <section class="relative min-h-screen flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop"
+        <section
+            class="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop"
             id="hero">
             <div class="absolute inset-0 -z-10">
                 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent z-10"></div>
                 <img alt="Hero: Premium Custom Gaming PC with RGB Lighting - DRAXEN Gaming"
                     class="w-full h-full object-cover"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQrtKYvPizqxM7K0-tcGzY7vUHSnCjE3clX37QD6E2uTDQF0uJgZ2iboOSatXnM-dIL751f3GFT23w-yq8Df-z5YsI9yrGPiqR0HjM_jg62l7S6vSfoHpHVsIUWu0k-aLcPW2TJ7rP9waLdtE8-AHNBqjYVRPOFEP4u-gIxI3ID9wEhzjiSIhfRvnwRlki9HXq_wr7RI1D1_sgoGBSKSZv9oB8P4cUf8rxphk2J_pUnxXsUWj1QvRphT3UaTZrpsv4ZXQYX1OvrZU"
-                    / loading="lazy">
+                    loading="lazy">
             </div>
-            <div class="max-w-3xl z-20 space-y-8">
+            <div class="max-w-3xl z-20 space-y-6 md:space-y-8 py-12">
                 <div class="space-y-4">
                     <span
-                        class="font-label-mono text-label-mono text-primary-container tracking-widest bg-primary-container/10 px-4 py-1 border-l-2 border-primary-container">PERFORMANCE
+                        class="font-label-mono text-label-mono text-primary-container tracking-widest bg-primary-container/10 px-4 py-1 border-l-2 border-primary-container inline-block">PERFORMANCE
                         RE-DEFINED</span>
                     <h1
-                        class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg leading-tight uppercase">
+                        class="hero-title font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg leading-tight uppercase">
                         Level Up Your Gaming Experience</h1>
                     <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Premium Gaming Gear & Custom
                         PC Builds. Engineered for those who refuse to compromise on speed, aesthetics, or immersion.</p>
                 </div>
-                <div class="flex flex-wrap gap-4">
+                <div class="hero-cta flex flex-wrap gap-4">
                     <a href="/accessories"><button
-                            class="cyber-notch bg-primary-container text-on-primary-container px-10 py-5 font-headline-md text-headline-md font-black hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] transition-all active:scale-95"
+                            class="cyber-notch bg-primary-container text-on-primary-container px-8 md:px-10 py-4 md:py-5 font-headline-md text-lg md:text-headline-md font-black hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] transition-all active:scale-95 w-full md:w-auto"
                             aria-label="Shop gaming gear now">Shop Now</button></a>
-                    <button
-                        class="cyber-notch glass-card px-10 py-5 font-headline-md text-headline-md font-bold text-primary border border-primary/30 hover:bg-primary/10 transition-all active:scale-95"
-                        aria-label="Join DRAXEN Discord community">Join Discord</button>
+                    <a href="/community"><button
+                            class="cyber-notch glass-card px-8 md:px-10 py-4 md:py-5 font-headline-md text-lg md:text-headline-md font-bold text-primary border border-primary/30 hover:bg-primary/10 transition-all active:scale-95 w-full md:w-auto"
+                            aria-label="Join DRAXEN community">Join Community</button></a>
                 </div>
             </div>
             <div class="scanline"></div>
         </section>
+
         <!-- Featured Categories Section -->
-        <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="categories">
-            <div class="mb-16 flex justify-between items-end">
+        <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+            id="categories">
+            <div class="mb-10 md:mb-16 flex justify-between items-end">
                 <div>
                     <h2 class="font-headline-lg text-headline-lg text-primary uppercase">Gear Categories</h2>
-                    <div class="h-1 w-24 bg-primary-container mt-4"></div>
+                    <div class="h-1 w-20 md:w-24 bg-primary-container mt-4"></div>
                 </div>
-                <span class="font-label-mono text-label-mono text-on-surface-variant">01 // BROWSE BY TYPE</span>
+                <span class="font-label-mono text-label-mono text-on-surface-variant hidden sm:block">01 // BROWSE BY
+                    TYPE</span>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
-                <!-- Category Cards with Better Semantic Structure -->
+            <div class="category-grid grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-gutter">
+                <!-- Category Cards -->
                 <a href="/accessories"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="Gaming Headphones & Audio Equipment">
                     <div
                         class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
                     <span
-                        class="material-symbols-outlined text-5xl text-primary-container group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-primary-container group-hover:scale-110 transition-transform"
                         aria-hidden="true">headphones</span>
-                    <span class="font-label-mono text-label-mono font-bold">HEADPHONES</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">HEADPHONES</span>
                 </a>
                 <a href="/accessories"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-secondary-container transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-secondary-container transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="Gaming Keyboards & Mechanical Switches">
                     <div
                         class="absolute inset-0 bg-secondary-container/5 opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
                     <span
-                        class="material-symbols-outlined text-5xl text-secondary-container group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-secondary-container group-hover:scale-110 transition-transform"
                         aria-hidden="true">keyboard</span>
-                    <span class="font-label-mono text-label-mono font-bold">KEYBOARDS</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">KEYBOARDS</span>
                 </a>
                 <a href="/pc-parts"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="CPUs & Processors for Gaming PCs">
                     <span
-                        class="material-symbols-outlined text-5xl text-primary-container group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-primary-container group-hover:scale-110 transition-transform"
                         aria-hidden="true">memory</span>
-                    <span class="font-label-mono text-label-mono font-bold">CPUs</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">CPUs</span>
                 </a>
                 <a href="/pc-parts"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-secondary-container transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-secondary-container transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="Motherboards & PC Components">
                     <span
-                        class="material-symbols-outlined text-5xl text-secondary-container group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-secondary-container group-hover:scale-110 transition-transform"
                         aria-hidden="true">developer_board</span>
-                    <span class="font-label-mono text-label-mono font-bold">BOARDS</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">BOARDS</span>
                 </a>
                 <a href="/pc-parts"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-primary transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-primary transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="RAM Memory & Storage Solutions">
                     <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-primary group-hover:scale-110 transition-transform"
                         aria-hidden="true">sd_card</span>
-                    <span class="font-label-mono text-label-mono font-bold">RAM</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">RAM</span>
                 </a>
                 <a href="/pc-parts"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-error transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-error transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="Power Supply Units for Gaming Builds">
                     <span
-                        class="material-symbols-outlined text-5xl text-error group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-error group-hover:scale-110 transition-transform"
                         aria-hidden="true">bolt</span>
-                    <span class="font-label-mono text-label-mono font-bold">PSU</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">PSU</span>
                 </a>
                 <a href="/pc-parts"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-primary-container transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="PC Cases & Gaming Enclosures">
                     <span
-                        class="material-symbols-outlined text-5xl text-primary-container group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-primary-container group-hover:scale-110 transition-transform"
                         aria-hidden="true">computer</span>
-                    <span class="font-label-mono text-label-mono font-bold">PC CASES</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">PC CASES</span>
                 </a>
                 <a href="/accessories"
-                    class="group relative glass-card p-base aspect-square flex flex-col items-center justify-center gap-4 hover:border-secondary transition-all cursor-pointer overflow-hidden"
+                    class="group relative glass-card p-4 md:p-base aspect-square md:aspect-square flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-secondary transition-all cursor-pointer overflow-hidden"
                     role="link" aria-label="Gaming Accessories & Peripherals">
                     <span
-                        class="material-symbols-outlined text-5xl text-secondary group-hover:scale-110 transition-transform"
+                        class="material-symbols-outlined text-4xl md:text-5xl text-secondary group-hover:scale-110 transition-transform"
                         aria-hidden="true">mouse</span>
-                    <span class="font-label-mono text-label-mono font-bold">MOUSE</span>
+                    <span class="font-label-mono text-xs md:text-label-mono font-bold text-center">MOUSE</span>
                 </a>
             </div>
         </section>
+
         <!-- Featured Products -->
-        <section class="relative py-24 overflow-hidden px-margin-mobile md:px-margin-desktop">
-            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section class="relative py-16 md:py-24 overflow-hidden px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="relative group order-2 lg:order-1">
                     <div
                         class="absolute -inset-4 bg-primary-container/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -412,24 +625,25 @@
                     <img alt="Custom Gaming PC Build"
                         class="relative w-full h-auto object-cover rounded-lg border border-primary/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                         src="https://lh3.googleusercontent.com/aida/AP1WRLsoF2Yxk-0wBfpE-bRUpcIdby3S2bLDj7BR1ZZqsz2eNk55hKuLPSbupGBckUcltL_TuzKpLpejlP31025pwvxDt7YTKtDwuP8kMTF6_AHV7fLacjzKpLfgb8GcuFkfVHJKws2nsKh4Kh5pE0JrVSI-FAAXgB6wSbuG5euCi5puLKerF0eyuGby53m9BHiB7C3NS_4xDNDw3Tj51nA9BiFf_qDx4IFtM9BNZCsSVuFZQQnfF9tWhsgs6mw"
-                        / loading="lazy">
+                        loading="lazy">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60">
                     </div>
                 </div>
-                <div class="space-y-8 order-1 lg:order-2">
+                <div class="space-y-6 md:space-y-8 order-1 lg:order-2">
                     <div class="space-y-4">
                         <span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase">Custom
                             Engineering</span>
-                        <h2 class="font-headline-lg text-headline-lg md:text-5xl leading-tight uppercase text-primary">
+                        <h2
+                            class="font-headline-lg text-2xl md:text-headline-lg md:text-5xl leading-tight uppercase text-primary">
                             Build Your Ultimate War Machine</h2>
                         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Our expert engineers will
                             assemble your dream rig with precision cooling, cable management, and peak performance
                             tuning.</p>
                     </div>
-                    <div class="flex">
+                    <div class="flex flex-col sm:flex-row">
                         <a href="/custom-pc"><button
-                                class="cyber-notch bg-primary-container text-on-primary-container px-10 py-5 font-headline-md text-headline-md font-black hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] drop-shadow-[0_0_10px_rgba(0,242,255,0.8)] transition-all active:scale-95">
+                                class="cyber-notch bg-primary-container text-on-primary-container px-8 md:px-10 py-4 md:py-5 font-headline-md text-lg md:text-headline-md font-black hover:shadow-[0_0_30px_rgba(0,242,255,0.6)] drop-shadow-[0_0_10px_rgba(0,242,255,0.8)] transition-all active:scale-95 w-full sm:w-auto">
                                 Start Your Build
                             </button></a>
                     </div>
@@ -442,196 +656,260 @@
                 class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent">
             </div>
         </section>
-        <section class="py-24 bg-surface-container-lowest/50 backdrop-blur-sm">
+
+        <!-- Trending Products -->
+        <section class="py-16 md:py-24 bg-surface-container-lowest/50 backdrop-blur-sm">
             <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-                <div class="mb-16">
+                <div class="mb-10 md:mb-16">
                     <h2 class="font-headline-lg text-headline-lg text-primary uppercase">Trending Artifacts</h2>
-                    <div class="h-1 w-24 bg-secondary-container mt-4"></div>
+                    <div class="h-1 w-20 md:w-24 bg-secondary-container mt-4"></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Product Card -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+                    <!-- Product Card 1 -->
                     <div
                         class="glass-card overflow-hidden group border border-outline-variant/30 hover:border-primary-container/50 transition-all duration-500">
-                        <div class="relative h-64 overflow-hidden bg-surface-container-high">
+                        <div class="relative h-48 md:h-64 overflow-hidden bg-surface-container-high">
                             <img alt="Gambit Pro Keyboard"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOdn5gbVU-t_QOQ-DuDzTpTgK-8pxSQzuxlmkLrN4_7SRR3NMN9Mt3L1SbUjm-528ooRzrBNgxC9jr_T9L7v8UgX_pO6V7sRWnrZGwkV5iLdpbAzVq_taEpya5__k_qc3qyodTjPAMyJmNI3_pfZQJVuraNETC1o6Loq7TEM-0G4ATUpvhqUPwNmGckRPw-GKfzXrxdkqcjzHfkjGf4f48HRr1zi_7wVnv0FOiLAihUxIza9NXQuUJYL6BjnSzsJHGDLe_jgr_6rw"
-                                / loading="lazy">
+                                loading="lazy">
                             <div
-                                class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 font-label-mono text-label-mono font-bold">
+                                class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 font-label-mono text-label-mono font-bold text-xs">
                                 NEW</div>
                         </div>
-                        <div class="p-8 space-y-4">
+                        <div class="p-6 md:p-8 space-y-4">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-headline-md text-headline-md text-primary">Gambit Pro TKL</h3>
+                                    <h3 class="font-headline-md text-xl md:text-headline-md text-primary">Gambit Pro TKL
+                                    </h3>
                                     <p class="font-label-mono text-label-mono text-on-surface-variant">MECHANICAL
                                         OPTICAL</p>
                                 </div>
                                 <div class="text-right">
                                     <span
-                                        class="font-headline-md text-headline-md text-primary-container">$189.99</span>
+                                        class="font-headline-md text-lg md:text-headline-md text-primary-container">$189.99</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-1 text-primary-container">
+                            <div class="flex items-center gap-1 text-primary-container text-sm">
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star_half</span>
-                                <span class="ml-2 font-label-mono text-on-surface-variant">(128)</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star_half</span>
+                                <span class="ml-2 font-label-mono text-on-surface-variant text-xs">(128)</span>
                             </div>
                             <button
-                                class="w-full py-4 border border-primary-container text-primary-container font-headline-md text-headline-md hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-[0.98] group-hover:shadow-[0_0_20px_rgba(0,242,255,0.3)]">ADD
+                                class="w-full py-3 md:py-4 border border-primary-container text-primary-container font-headline-md text-base md:text-headline-md hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-[0.98] group-hover:shadow-[0_0_20px_rgba(0,242,255,0.3)]">ADD
                                 TO COMMAND</button>
                         </div>
                     </div>
-                    <!-- Repeat Products for visual density -->
+                    <!-- Product Card 2 -->
                     <div
                         class="glass-card overflow-hidden group border border-outline-variant/30 hover:border-secondary-container/50 transition-all duration-500">
-                        <div class="relative h-64 overflow-hidden bg-surface-container-high">
+                        <div class="relative h-48 md:h-64 overflow-hidden bg-surface-container-high">
                             <div
                                 class="w-full h-full bg-gradient-to-br from-surface-container-high to-surface-container-highest flex items-center justify-center">
-                                <span class="material-symbols-outlined text-8xl opacity-20">headphones</span>
+                                <span
+                                    class="material-symbols-outlined text-6xl md:text-8xl opacity-20">headphones</span>
                             </div>
                             <div
-                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-mono text-label-mono font-bold">
+                                class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-mono text-label-mono font-bold text-xs">
                                 ELITE</div>
                         </div>
-                        <div class="p-8 space-y-4">
+                        <div class="p-6 md:p-8 space-y-4">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-headline-md text-headline-md text-primary">Phantom X7</h3>
+                                    <h3 class="font-headline-md text-xl md:text-headline-md text-primary">Phantom X7
+                                    </h3>
                                     <p class="font-label-mono text-label-mono text-on-surface-variant">7.1 SPATIAL AUDIO
                                     </p>
                                 </div>
                                 <div class="text-right">
                                     <span
-                                        class="font-headline-md text-headline-md text-secondary-container">$249.99</span>
+                                        class="font-headline-md text-lg md:text-headline-md text-secondary-container">$249.99</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-1 text-secondary-container">
+                            <div class="flex items-center gap-1 text-secondary-container text-sm">
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
-                                <span class="ml-2 font-label-mono text-on-surface-variant">(94)</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                                <span class="ml-2 font-label-mono text-on-surface-variant text-xs">(94)</span>
                             </div>
                             <button
-                                class="w-full py-4 border border-secondary-container text-secondary-container font-headline-md text-headline-md hover:bg-secondary-container hover:text-on-secondary-container transition-all active:scale-[0.98] group-hover:shadow-[0_0_20px_rgba(119,1,208,0.3)]">ADD
+                                class="w-full py-3 md:py-4 border border-secondary-container text-secondary-container font-headline-md text-base md:text-headline-md hover:bg-secondary-container hover:text-on-secondary-container transition-all active:scale-[0.98] group-hover:shadow-[0_0_20px_rgba(119,1,208,0.3)]">ADD
                                 TO COMMAND</button>
                         </div>
                     </div>
+                    <!-- Product Card 3 -->
                     <div
                         class="glass-card overflow-hidden group border border-outline-variant/30 hover:border-primary/50 transition-all duration-500">
-                        <div class="relative h-64 overflow-hidden bg-surface-container-high">
+                        <div class="relative h-48 md:h-64 overflow-hidden bg-surface-container-high">
                             <div
                                 class="w-full h-full bg-gradient-to-br from-surface-container-high to-surface-container-highest flex items-center justify-center">
-                                <span class="material-symbols-outlined text-8xl opacity-20">memory</span>
+                                <span class="material-symbols-outlined text-6xl md:text-8xl opacity-20">memory</span>
                             </div>
                         </div>
-                        <div class="p-8 space-y-4">
+                        <div class="p-6 md:p-8 space-y-4">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h3 class="font-headline-md text-headline-md text-primary">NEXUS Reactor</h3>
+                                    <h3 class="font-headline-md text-xl md:text-headline-md text-primary">NEXUS Reactor
+                                    </h3>
                                     <p class="font-label-mono text-label-mono text-on-surface-variant">LIQUID COOLED PC
                                     </p>
                                 </div>
                                 <div class="text-right">
-                                    <span class="font-headline-md text-headline-md text-primary">$3499.00</span>
+                                    <span
+                                        class="font-headline-md text-lg md:text-headline-md text-primary">$3499.00</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-1 text-primary">
+                            <div class="flex items-center gap-1 text-primary text-sm">
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
                                 <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">star</span>
-                                <span class="ml-2 font-label-mono text-on-surface-variant">(12)</span>
+                                    style="font-variation-settings: 'FILL' 1; font-size: 18px;">star</span>
+                                <span class="ml-2 font-label-mono text-on-surface-variant text-xs">(12)</span>
                             </div>
                             <a href="/product-details"><button
-                                    class="w-full py-4 border border-primary text-primary font-headline-md text-headline-md hover:bg-primary hover:text-surface transition-all active:scale-[0.98]">VIEW
+                                    class="w-full py-3 md:py-4 border border-primary text-primary font-headline-md text-base md:text-headline-md hover:bg-primary hover:text-surface transition-all active:scale-[0.98]">VIEW
                                     DETAILS</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- YouTube Video Section - DRAXEN Channel -->
+        <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-primary uppercase">DRAXEN On YouTube</h2>
+                    <div class="h-1 w-20 md:w-24 bg-error mt-4"></div>
+                </div>
+                <a href="https://youtube.com/@draxengaming" target="_blank"
+                    class="font-label-mono text-label-mono text-error hover:text-red-400 transition-colors flex items-center gap-2">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                    @draxengaming
+                </a>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+                <div class="space-y-6">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/njKWh_YZb3c" title="DRAXEN Gaming - YouTube Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="flex items-center gap-4 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-error">play_circle</span>
+                        <span class="font-label-mono text-label-mono">LATEST UPLOAD FROM DRAXEN GAMING</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 md:p-10 space-y-6">
+                    <span class="font-label-mono text-label-mono text-error tracking-widest">SUBSCRIBE & FOLLOW</span>
+                    <h3 class="font-headline-md text-2xl md:text-headline-md text-primary uppercase">Join the DRAXEN
+                        Network</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Watch the latest hardware reviews, unboxings, custom PC builds, and esports highlights.
+                        Subscribe to stay ahead of the competition.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://youtube.com/@draxengaming" target="_blank"
+                            class="cyber-notch bg-error text-white px-8 py-4 font-headline-md text-headline-md font-black hover:shadow-[0_0_30px_rgba(255,0,0,0.4)] transition-all active:scale-95 text-center">
+                            <span class="flex items-center gap-2 justify-center">
+                                <span class="material-symbols-outlined">play_circle</span>
+                                Subscribe
+                            </span>
+                        </a>
+                        <a href="/community"
+                            class="cyber-notch glass-card px-8 py-4 font-headline-md text-headline-md font-bold text-primary border border-primary/30 hover:bg-primary/10 transition-all active:scale-95 text-center">
+                            Join Community
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Why Choose Draxen -->
-        <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-                <div class="p-8 glass-card border-l-4 border-primary-container space-y-4 group">
+        <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-gutter">
+                <div class="p-6 md:p-8 glass-card border-l-4 border-primary-container space-y-4 group">
                     <span
-                        class="material-symbols-outlined text-4xl text-primary-container group-hover:rotate-12 transition-transform">local_shipping</span>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-primary-container group-hover:rotate-12 transition-transform">local_shipping</span>
                     <h4 class="font-headline-md text-headline-md uppercase">Fast Delivery</h4>
                     <p class="font-body-md text-body-md text-on-surface-variant">Global logistics network ensuring your
                         gear arrives in record time.</p>
                 </div>
-                <div class="p-8 glass-card border-l-4 border-secondary-container space-y-4 group">
+                <div class="p-6 md:p-8 glass-card border-l-4 border-secondary-container space-y-4 group">
                     <span
-                        class="material-symbols-outlined text-4xl text-secondary-container group-hover:rotate-12 transition-transform">sell</span>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-secondary-container group-hover:rotate-12 transition-transform">sell</span>
                     <h4 class="font-headline-md text-headline-md uppercase">Affordable</h4>
                     <p class="font-body-md text-body-md text-on-surface-variant">Elite hardware doesn't have to cost a
                         fortune. Competitive pricing guaranteed.</p>
                 </div>
-                <div class="p-8 glass-card border-l-4 border-primary space-y-4 group">
+                <div class="p-6 md:p-8 glass-card border-l-4 border-primary space-y-4 group">
                     <span
-                        class="material-symbols-outlined text-4xl text-primary group-hover:rotate-12 transition-transform">verified</span>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-primary group-hover:rotate-12 transition-transform">verified</span>
                     <h4 class="font-headline-md text-headline-md uppercase">Premium Quality</h4>
                     <p class="font-body-md text-body-md text-on-surface-variant">Every component is stress-tested to
                         ensure zero failure rates.</p>
                 </div>
-                <div class="p-8 glass-card border-l-4 border-error space-y-4 group">
+                <div class="p-6 md:p-8 glass-card border-l-4 border-error space-y-4 group">
                     <span
-                        class="material-symbols-outlined text-4xl text-error group-hover:rotate-12 transition-transform">support_agent</span>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-error group-hover:rotate-12 transition-transform">support_agent</span>
                     <h4 class="font-headline-md text-headline-md uppercase">Expert Support</h4>
                     <p class="font-body-md text-body-md text-on-surface-variant">Gamers supporting gamers. Available
                         24/7 for technical assistance.</p>
                 </div>
             </div>
         </section>
-        <!-- Contact & Community -->
-        <section class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
-            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
-                <div class="space-y-12">
+
+        <!-- Contact & Community Section -->
+        <section class="py-16 md:py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+                <div class="space-y-8 md:space-y-12">
                     <div>
                         <h2 class="font-headline-lg text-headline-lg text-primary uppercase">Join the Community</h2>
                         <p class="mt-4 font-body-lg text-body-lg text-on-surface-variant">Stay updated with the latest
                             drops, community tournaments, and PC build showcases.</p>
                     </div>
-                    <div class="flex gap-8">
-                        <a class="flex flex-col items-center gap-2 group" href="#">
+                    <div class="flex gap-6 md:gap-8">
+                        <a class="flex flex-col items-center gap-2 group" href="https://discord.com/invite/draxengaming"
+                            target="_blank">
                             <div
-                                class="w-16 h-16 rounded-full glass-card flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
-                                <span class="material-symbols-outlined text-3xl">forum</span>
+                                class="w-14 h-14 md:w-16 md:h-16 rounded-full glass-card flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+                                <span class="material-symbols-outlined text-2xl md:text-3xl">forum</span>
                             </div>
-                            <span class="font-label-mono text-label-mono">DISCORD</span>
+                            <span class="font-label-mono text-label-mono text-xs md:text-sm">DISCORD</span>
                         </a>
-                        <a class="flex flex-col items-center gap-2 group" href="#">
+                        <a class="flex flex-col items-center gap-2 group" href="https://youtube.com/@draxengaming"
+                            target="_blank">
                             <div
-                                class="w-16 h-16 rounded-full glass-card flex items-center justify-center group-hover:bg-error group-hover:text-on-error transition-all">
-                                <span class="material-symbols-outlined text-3xl">play_circle</span>
+                                class="w-14 h-14 md:w-16 md:h-16 rounded-full glass-card flex items-center justify-center group-hover:bg-error group-hover:text-on-error transition-all">
+                                <span class="material-symbols-outlined text-2xl md:text-3xl">play_circle</span>
                             </div>
-                            <span class="font-label-mono text-label-mono">YOUTUBE</span>
+                            <span class="font-label-mono text-label-mono text-xs md:text-sm">YOUTUBE</span>
                         </a>
                     </div>
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <div class="flex items-center gap-4 group">
                             <span class="material-symbols-outlined text-primary-container">call</span>
                             <span
@@ -640,99 +918,170 @@
                         <div class="flex items-center gap-4 group">
                             <span class="material-symbols-outlined text-primary-container">mail</span>
                             <span
-                                class="font-body-lg text-body-lg text-on-surface hover:text-primary-container transition-colors">ahsonsaqib0708@gmail.com</span>
+                                class="font-body-lg text-body-lg text-on-surface hover:text-primary-container transition-colors break-all">ahsonsaqib0708@gmail.com</span>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-12 space-y-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 font-label-mono text-label-mono text-outline opacity-30">
+                <div class="glass-card p-6 md:p-12 space-y-6 md:space-y-8 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 p-4 font-label-mono text-label-mono text-outline opacity-30 text-xs">
                         SECURE_CHANNEL_V3</div>
                     <h3 class="font-headline-md text-headline-md uppercase border-b border-outline-variant/30 pb-4">
                         Initialize Contact</h3>
-                    <form class="space-y-6">
+                    <form id="contactForm" class="space-y-4 md:space-y-6">
                         <div class="space-y-2">
-                            <label class="font-label-mono text-label-mono text-on-surface-variant uppercase">Pilot
+                            <label
+                                class="font-label-mono text-label-mono text-on-surface-variant uppercase text-xs">Pilot
                                 Identifier</label>
-                            <input
-                                class="w-full bg-surface-container border-b-2 border-outline focus:border-primary-container focus:ring-0 text-primary font-label-mono transition-all py-3 placeholder:opacity-30"
-                                placeholder="YOUR NAME" type="text" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="font-label-mono text-label-mono text-on-surface-variant uppercase">Comms
-                                Address</label>
-                            <input
-                                class="w-full bg-surface-container border-b-2 border-outline focus:border-primary-container focus:ring-0 text-primary font-label-mono transition-all py-3 placeholder:opacity-30"
-                                placeholder="EMAIL@PROTOCOL.COM" type="email" />
+                            <input id="contactName" class="form-input" placeholder="YOUR NAME" type="text" required />
                         </div>
                         <div class="space-y-2">
                             <label
-                                class="font-label-mono text-label-mono text-on-surface-variant uppercase">Transmission</label>
-                            <textarea
-                                class="w-full bg-surface-container border-b-2 border-outline focus:border-primary-container focus:ring-0 text-primary font-label-mono transition-all py-3 placeholder:opacity-30 resize-none"
-                                placeholder="ENTER MESSAGE DATA..." rows="4"></textarea>
+                                class="font-label-mono text-label-mono text-on-surface-variant uppercase text-xs">Comms
+                                Address</label>
+                            <input id="contactEmail" class="form-input" placeholder="EMAIL@PROTOCOL.COM" type="email"
+                                required />
                         </div>
-                        <button
-                            class="w-full py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md uppercase hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all"
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-mono text-label-mono text-on-surface-variant uppercase text-xs">Transmission</label>
+                            <textarea id="contactMessage" class="form-input" placeholder="ENTER MESSAGE DATA..."
+                                rows="4" required></textarea>
+                        </div>
+                        <button id="contactSubmitBtn"
+                            class="w-full py-3 md:py-4 bg-primary-container text-on-primary-container font-headline-md text-lg md:text-headline-md uppercase hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all"
                             type="submit">Transmit Message</button>
+                        <p id="contactStatus" class="font-label-mono text-label-mono text-center hidden"></p>
                     </form>
                 </div>
             </div>
         </section>
     </main>
     <!-- Footer -->
-    <footer class="w-full pt-16 pb-8 bg-surface-container-lowest border-t border-outline-variant/30">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-            <div class="space-y-6">
-                <div class="flex items-center gap-4">
-                    <img alt="DRAXEN Logo" class="h-8 w-auto"
+    <footer class="w-full pt-12 md:pt-16 pb-6 md:pb-8 bg-surface-container-lowest border-t border-outline-variant/30">
+        <div
+            class="footer-grid grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="col-span-2 md:col-span-1 space-y-4 md:space-y-6">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <img alt="DRAXEN Logo" class="h-8 md:h-10 w-auto"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyIbrzrT5AUHaM8al4e8q9Lra1G5cNP2mYj3F3Y20-9eQSOK2qvDpkr5Dcw2PtJfiSJzbihKjSZSyJr8CwPiIH69oEPZ36U9jzf-Ap8nYhOIarLpN9YhAgqpv1DKK2k9G1XZRWlOmXN7XENNOHGXYsCrVmcoXQ74AKHepXMvE7cIAfM4xf9pF7hYiMLO0Cn5qNBMThs6mFzwAA6kvZ1DJLsMGVkkydxL29x00btYW5MhYhqoyg8IyTNKC_-brIOWRyd-CkTqMWN-s"
-                        / loading="lazy">
+                        loading="lazy">
                     <span class="font-headline-md text-headline-md font-bold text-primary"><a href="/"
                             class="hover:text-secondary transition-colors">DRAXEN</a></span>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant">The future of competitive gaming starts
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">The future of competitive gaming
+                    starts
                     here. High-performance gear for the modern athlete.</p>
             </div>
-            <div class="space-y-4">
-                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase">Gear</h5>
+            <div class="space-y-3 md:space-y-4">
+                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase text-xs">Gear</h5>
                 <ul class="space-y-2">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/accessories">Accessories</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/custom-pc">Custom Builds</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/pc-parts">PC Parts</a></li>
                 </ul>
             </div>
-            <div class="space-y-4">
-                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase">Resources</h5>
+            <div class="space-y-3 md:space-y-4">
+                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase text-xs">Resources</h5>
                 <ul class="space-y-2">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/contact">Support</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/about">About</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/community">Community</a></li>
                 </ul>
             </div>
-            <div class="space-y-4">
-                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase">Legal</h5>
+            <div class="space-y-3 md:space-y-4">
+                <h5 class="font-label-mono text-label-mono font-bold text-primary uppercase text-xs">Legal</h5>
                 <ul class="space-y-2">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/privacy">Privacy Policy</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors"
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-container transition-colors text-sm"
                             href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div
-            class="mt-16 px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-outline-variant/10 text-center">
-            <p class="font-label-mono text-label-mono text-on-surface-variant">© 2024 DRAXEN GAMING. ALL RIGHTS
+            class="mt-10 md:mt-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-6 md:pt-8 border-t border-outline-variant/10 text-center">
+            <p class="font-label-mono text-label-mono text-on-surface-variant text-xs">© 2024 DRAXEN GAMING. ALL RIGHTS
                 RESERVED.</p>
         </div>
     </footer>
     <script>
-            // Storefront behavior: product search, cart, checkout, and contact forms
+        // Mobile navigation
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('open');
+            document.getElementById('mobileOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('open');
+            document.getElementById('mobileOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const statusEl = document.getElementById('contactStatus');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('contactName').value.trim();
+                    const email = document.getElementById('contactEmail').value.trim();
+                    const message = document.getElementById('contactMessage').value.trim();
+                    const submitBtn = document.getElementById('contactSubmitBtn');
+
+                    if (!name || !email || !message) {
+                        statusEl.className = 'font-label-mono text-label-mono text-center text-error';
+                        statusEl.textContent = 'Please fill all fields.';
+                        statusEl.classList.remove('hidden');
+                        return;
+                    }
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, topic: 'general', message })
+                        });
+
+                        const result = await response.json();
+
+                        if (!response.ok) throw new Error(result.error || 'Failed to send');
+
+                        statusEl.className = 'font-label-mono text-label-mono text-center text-primary-container';
+                        statusEl.textContent = '✓ Message transmitted successfully!';
+                        statusEl.classList.remove('hidden');
+
+                        document.getElementById('contactName').value = '';
+                        document.getElementById('contactEmail').value = '';
+                        document.getElementById('contactMessage').value = '';
+
+                        setTimeout(() => {
+                            statusEl.classList.add('hidden');
+                        }, 5000);
+                    } catch (error) {
+                        statusEl.className = 'font-label-mono text-label-mono text-center text-error';
+                        statusEl.textContent = 'Error: ' + error.message;
+                        statusEl.classList.remove('hidden');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Transmit Message';
+                    }
+                });
+            }
+
+            // Storefront behavior: product search, cart, checkout
             (() => {
                 const API = '';
                 const CART_KEY = 'draxen_cart_v1';
@@ -1000,52 +1349,7 @@
                 }
 
                 function setupContactForms() {
-                    document.querySelectorAll('form').forEach((form) => {
-                        const button = form.querySelector('button');
-                        const fields = [...form.querySelectorAll('input, textarea')];
-                        if (!button || !/transmit/i.test(button.textContent) || fields.length < 3) return;
-                        form.addEventListener('submit', submitContact);
-                        if (button.type === 'button') {
-                            button.addEventListener('click', () => form.requestSubmit());
-                        }
-                    });
-                }
-
-                async function submitContact(event) {
-                    event.preventDefault();
-                    const form = event.currentTarget;
-                    const button = form.querySelector('button');
-                    const inputs = [...form.querySelectorAll('input, textarea, select')];
-                    const [nameInput, emailInput] = inputs;
-                    const messageInput = inputs.find((input) => input.tagName === 'TEXTAREA');
-                    const topicInput = inputs.find((input) => input.tagName === 'SELECT');
-                    const payload = {
-                        name: nameInput?.value || 'Website visitor',
-                        email: emailInput?.value || '',
-                        topic: topicInput?.value || 'storefront',
-                        message: messageInput?.value || ''
-                    };
-
-                    button.disabled = true;
-                    const label = button.textContent;
-                    button.textContent = 'Sending...';
-
-                    try {
-                        const response = await fetch(`${API}/api/contact`, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        const result = await response.json();
-                        if (!response.ok) throw new Error(result.error || 'Unable to send message');
-                        form.reset();
-                        toast('Message transmitted');
-                    } catch (error) {
-                        toast(error.message);
-                    } finally {
-                        button.disabled = false;
-                        button.textContent = label;
-                    }
+                    // Already handled above
                 }
 
                 function setupButtons() {
@@ -1099,15 +1403,16 @@
                         products = [...FALLBACK_PRODUCTS];
                     }
                     setupButtons();
-                    setupContactForms();
                     renderCart();
                 });
             })();
+        });
 
         // Micro-interaction: RGB Particle Canvas
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
+        let animFrame;
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -1155,7 +1460,7 @@
                 p.update();
                 p.draw();
             });
-            requestAnimationFrame(animate);
+            animFrame = requestAnimationFrame(animate);
         }
 
         window.addEventListener('resize', resize);

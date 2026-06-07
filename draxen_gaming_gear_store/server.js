@@ -111,6 +111,15 @@ app.use(express.static(__dirname, {
   maxAge: NODE_ENV === 'production' ? '1h' : 0
 }));
 
+// Explicit HTML page routes
+const pageRoutes = ['/', '/index', '/about', '/contact', '/community', '/cart', '/checkout', '/privacy', '/terms', '/accessories', '/pc-parts', '/custom-pc', '/product-details'];
+pageRoutes.forEach(route => {
+  const fileName = route === '/' || route === '/index' ? 'index' : route.replace('/', '');
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname, fileName + '.html'));
+  });
+});
+
 function money(value) {
   return Number.parseFloat(value || 0).toFixed(2);
 }
