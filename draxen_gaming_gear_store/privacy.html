@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
     <meta name="description" content="Privacy Policy | DRAXEN Gaming Store" />
     <title>Privacy Policy | DRAXEN Gaming</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Sora:wght@700;800&amp;family=Inter:wght@400;600&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Sora:wght@700;800&family=Inter:wght@400;600&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -39,18 +38,97 @@
             }
         }
     </script>
+    <style>
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: rgba(19, 19, 19, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(0, 242, 255, 0.2);
+            z-index: 60;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 55;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 768px) {
+            .md\\:flex {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body
-    class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-32 selection:bg-secondary selection:text-on-secondary">
+    class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-16 md:pt-32 selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
+
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="flex items-center justify-between mb-8">
+            <span class="font-headline-md text-headline-md text-primary-container">DRAXEN</span>
+            <button onclick="closeMobileNav()"
+                class="material-symbols-outlined text-primary-container text-3xl">close</button>
+        </div>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/">Home</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/accessories">Accessories</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/pc-parts">PC Parts</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/custom-pc">Custom PCs</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/about">About</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/community">Community</a>
+        <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary-container transition-colors py-3 border-b border-outline-variant/20"
+            href="/contact">Contact</a>
+        <div class="mt-auto pt-8">
+            <a href="https://youtube.com/@draxengaming" target="_blank"
+                class="flex items-center gap-3 text-error hover:text-red-400 transition-colors font-body-md py-3">
+                <span class="material-symbols-outlined">play_circle</span>
+                YouTube Channel
+            </a>
+        </div>
+    </nav>
+
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl flex justify-between items-center px-margin-desktop h-20">
-        <div class="font-headline-lg text-headline-lg text-primary tracking-tighter">
-            <a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a>
+        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl flex justify-between items-center px-5 md:px-16 h-16 md:h-20">
+        <div class="font-headline-lg text-lg md:text-headline-lg text-primary tracking-tighter">
+            <a href="/" class="hover:text-secondary transition-colors">DRAXEN</a>
         </div>
-        <div class="hidden md:flex gap-8 items-center">
-            <ul class="flex gap-8 font-body-md text-body-md">
+        <div class="hidden md:flex gap-6 lg:gap-8 items-center">
+            <ul class="flex gap-6 lg:gap-8 font-body-md text-body-md">
                 <li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300"
                         href="/">Home</a></li>
                 <li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300"
@@ -63,23 +141,25 @@
                         href="/contact">Contact</a></li>
             </ul>
         </div>
-        <div class="flex items-center gap-4 text-secondary">
+        <div class="flex items-center gap-3 md:gap-4 text-secondary">
             <a href="/cart" aria-label="shopping_cart" class="hover:text-secondary duration-300 transition-colors">
-                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="material-symbols-outlined text-2xl">shopping_cart</span>
             </a>
             <button aria-label="search" class="hover:text-secondary duration-300 transition-colors">
-                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined text-2xl">search</span>
             </button>
+            <button onclick="openMobileNav()" class="md:hidden material-symbols-outlined text-secondary text-2xl"
+                aria-label="Open menu">menu</button>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow w-full max-w-4xl mx-auto px-6 py-12" role="main">
+    <main class="flex-grow w-full max-w-4xl mx-auto px-5 md:px-6 py-8 md:py-12" role="main">
         <h1
-            class="font-display-lg text-4xl text-primary-container mb-8 border-b border-outline-variant/30 pb-4 uppercase">
+            class="font-display-lg text-2xl md:text-4xl text-primary-container mb-6 md:mb-8 border-b border-outline-variant/30 pb-4 uppercase">
             Privacy Policy
         </h1>
-        <div class="space-y-6 text-on-surface-variant leading-relaxed">
+        <div class="space-y-5 md:space-y-6 text-on-surface-variant leading-relaxed text-sm md:text-base">
             <p><strong>Effective Date: June 6, 2026</strong></p>
             <p>
                 At DRAXEN Gaming, accessible from <a href="https://draxengaming.com"
@@ -88,7 +168,7 @@
                 and recorded by DRAXEN Gaming and how we use it.
             </p>
 
-            <h2 class="text-2xl font-bold text-on-background mt-8">Information We Collect</h2>
+            <h2 class="text-xl md:text-2xl font-bold text-on-background mt-6 md:mt-8">Information We Collect</h2>
             <p>
                 The personal information that you are asked to provide, and the reasons why you are asked to provide it,
                 will be made clear to you at the point we ask you to provide your personal information.
@@ -99,7 +179,7 @@
                 information you may choose to provide.
             </p>
 
-            <h2 class="text-2xl font-bold text-on-background mt-8">How We Use Your Information</h2>
+            <h2 class="text-xl md:text-2xl font-bold text-on-background mt-6 md:mt-8">How We Use Your Information</h2>
             <ul class="list-disc list-inside space-y-2">
                 <li>Provide, operate, and maintain our website and server.</li>
                 <li>Improve, personalize, and expand our store and accessories selection.</li>
@@ -109,7 +189,7 @@
                 <li>Send you emails relating to order tracking, system support, or announcements.</li>
             </ul>
 
-            <h2 class="text-2xl font-bold text-on-background mt-8">Cookies and Web Beacons</h2>
+            <h2 class="text-xl md:text-2xl font-bold text-on-background mt-6 md:mt-8">Cookies and Web Beacons</h2>
             <p>
                 Like any other website, DRAXEN Gaming uses 'cookies'. These cookies are used to store information
                 including visitors' preferences, and the pages on the website that the visitor accessed or visited. The
@@ -117,7 +197,7 @@
                 visitors' browser type and/or other information.
             </p>
 
-            <h2 class="text-2xl font-bold text-on-background mt-8">Data Security</h2>
+            <h2 class="text-xl md:text-2xl font-bold text-on-background mt-6 md:mt-8">Data Security</h2>
             <p>
                 We use AES-256 standard encryption for all API transaction transmissions. However, please remember that
                 no method of transmission over the internet, or method of electronic storage is 100% secure, and we
@@ -128,20 +208,33 @@
 
     <!-- Footer -->
     <footer
-        class="w-full bg-surface-container-highest/50 backdrop-blur-md border-t border-primary/20 py-12 px-12 mt-20">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-headline-lg text-headline-lg text-primary">Draxen Gaming Store</div>
-            <div class="flex gap-6 items-center font-label-sm text-label-sm text-on-surface-variant">
+        class="w-full bg-surface-container-highest/50 backdrop-blur-md border-t border-primary/20 py-8 md:py-12 px-5 md:px-12 mt-12 md:mt-20">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+            <div class="font-headline-lg text-xl md:text-headline-lg text-primary">Draxen Gaming Store</div>
+            <div
+                class="flex gap-4 md:gap-6 items-center font-label-sm text-label-sm text-on-surface-variant flex-wrap justify-center">
                 <a class="hover:text-tertiary transition-colors" href="/privacy">Privacy Policy</a>
                 <a class="hover:text-tertiary transition-colors" href="/terms">Terms of Service</a>
                 <a class="hover:text-tertiary transition-colors" href="mailto:ahsonsaqib0708@gmail.com">Contact
                     Support</a>
             </div>
         </div>
-        <div class="text-center mt-8 text-on-surface-variant opacity-80 font-label-sm text-label-sm">
-            © 2024 Draxen Gaming Store. All Rights Reserved.
+        <div class="text-center mt-6 md:mt-8 text-on-surface-variant opacity-80 font-label-sm text-label-sm text-xs">
+            &copy; 2024 Draxen Gaming Store. All Rights Reserved.
         </div>
     </footer>
+    <script>
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('open');
+            document.getElementById('mobileOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('open');
+            document.getElementById('mobileOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    </script>
     <script src="/shared.js"></script>
 </body>
 
