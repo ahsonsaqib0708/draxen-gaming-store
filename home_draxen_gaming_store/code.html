@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Draxen Gaming Store - Level Up Your Gaming Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glow-sm {
+            text-shadow: 0 0 10px rgba(70, 245, 224, 0.5);
+        }
+        .neon-border {
+            border: 1px solid rgba(70, 245, 224, 0.3);
+            box-shadow: 0 0 15px rgba(70, 245, 224, 0.1) inset, 0 0 15px rgba(70, 245, 224, 0.1);
+            transition: all 0.3s ease;
+        }
+        .neon-border:hover {
+            border-color: rgba(70, 245, 224, 0.8);
+            box-shadow: 0 0 20px rgba(70, 245, 224, 0.4) inset, 0 0 20px rgba(70, 245, 224, 0.4);
+        }
+        .neon-border-magenta {
+            border: 1px solid rgba(255, 171, 243, 0.3);
+            box-shadow: 0 0 15px rgba(255, 171, 243, 0.1) inset, 0 0 15px rgba(255, 171, 243, 0.1);
+            transition: all 0.3s ease;
+        }
+        .neon-border-magenta:hover {
+            border-color: rgba(255, 171, 243, 0.8);
+            box-shadow: 0 0 20px rgba(255, 171, 243, 0.4) inset, 0 0 20px rgba(255, 171, 243, 0.4);
+        }
+        .energy-line {
+            background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .pulse-glow {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(109, 35, 249, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(109, 35, 249, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(109, 35, 249, 0); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "secondary": "#46f5e0",
+                      "on-tertiary": "#5b005b",
+                      "on-tertiary-fixed-variant": "#810081",
+                      "on-surface-variant": "#cbc3d9",
+                      "background": "#131313",
+                      "on-background": "#e5e2e1",
+                      "secondary-container": "#00d8c4",
+                      "secondary-fixed-dim": "#17deca",
+                      "on-secondary": "#003731",
+                      "surface": "#131313",
+                      "tertiary": "#ffabf3",
+                      "inverse-primary": "#6d23f9",
+                      "surface-container-lowest": "#0e0e0e",
+                      "outline-variant": "#494456",
+                      "surface-dim": "#131313",
+                      "surface-container": "#201f1f",
+                      "primary-fixed": "#e8ddff",
+                      "on-tertiary-container": "#ffaef3",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#380038",
+                      "on-secondary-fixed-variant": "#005048",
+                      "surface-container-high": "#2a2a2a",
+                      "primary-fixed-dim": "#cfbdff",
+                      "on-primary-fixed": "#22005d",
+                      "on-secondary-container": "#005950",
+                      "inverse-on-surface": "#313030",
+                      "primary-container": "#6200ee",
+                      "on-primary": "#3a0093",
+                      "surface-variant": "#353534",
+                      "surface-bright": "#3a3939",
+                      "on-secondary-fixed": "#00201c",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#970097",
+                      "secondary-fixed": "#4ffbe6",
+                      "tertiary-fixed-dim": "#ffabf3",
+                      "surface-container-highest": "#353534",
+                      "outline": "#948da2",
+                      "tertiary-fixed": "#ffd7f5",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-container": "#d0beff",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#cfbdff",
+                      "primary": "#cfbdff",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-fixed-variant": "#5300cd",
+                      "surface-container-low": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Sora"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- Navigation Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300 ease-out">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter hover:scale-105 active:scale-95 transition-transform cursor-pointer">
+            Draxen Gaming Store
+        </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-secondary border-b-2 border-secondary pb-1 hover:glow-sm hover:text-secondary duration-300 font-label-sm text-label-sm" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:text-secondary duration-300 font-label-sm text-label-sm" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:text-secondary duration-300 font-label-sm text-label-sm" href="#">About</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:text-secondary duration-300 font-label-sm text-label-sm" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-4 text-secondary">
+<button class="hover:scale-105 active:scale-95 transition-transform hover:glow-sm"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="hover:scale-105 active:scale-95 transition-transform hover:glow-sm"><span class="material-symbols-outlined">search</span></button>
+</div>
+<div class="energy-line"></div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-24 md:pt-48 md:pb-32 px-margin-mobile md:px-margin-desktop min-h-[819px] flex items-center justify-center overflow-hidden">
+<!-- Abstract Background -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-secondary rounded-full mix-blend-screen filter blur-[150px] animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-inverse-primary rounded-full mix-blend-screen filter blur-[200px]" style="animation: pulse 4s infinite alternate;"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">
+                Level Up Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-tertiary">Gaming Experience</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                Elite hardware for unparalleled performance. Discover the next generation of gaming gear engineered for victory.
+            </p>
+<a class="mt-4 bg-inverse-primary text-on-primary px-8 py-4 rounded-lg font-label-sm text-label-sm uppercase tracking-widest pulse-glow hover:bg-primary-container transition-colors neon-border inline-flex items-center gap-2" href="#">
+                Shop Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</header>
+<!-- Footer Component -->
+<footer class="w-full mt-auto bg-surface-container-highest/50 backdrop-blur-md border-t border-primary/20 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 relative">
+<div class="flex flex-col gap-4">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+                Draxen Gaming Store
+            </div>
+<p class="font-label-sm text-label-sm text-tertiary">© 2024 Draxen Gaming Store. All Rights Reserved.</p>
+</div>
+<div class="flex flex-col gap-2 font-label-sm text-label-sm">
+<h4 class="text-on-surface mb-2">Connect</h4>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Discord</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">YouTube</a>
+</div>
+<div class="flex flex-col gap-2 font-label-sm text-label-sm">
+<h4 class="text-on-surface mb-2">Contact</h4>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="tel:03059900668">03059900668</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="mailto:ahsonsaqib0708@gmail.com">ahsonsaqib0708@gmail.com</a>
+</div>
+<div class="flex justify-end items-end md:col-span-1 hidden md:flex">
+<!-- Empty space for layout balance -->
+</div>
+</footer>
+</body></html>
