@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | DRAXEN Gaming Store</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&amp;family=JetBrains+Mono:wght@500&display=swap&amp;family=Sora:wght@700;80&display=swap0&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Config -->
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | DRAXEN Gaming Store</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&amp;family=JetBrains+Mono:wght@500&display=swap&amp;family=Sora:wght@700;80&display=swap0&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -99,164 +107,240 @@
             }
         }
     </script>
-<style>
+    <style>
         body {
             background-color: #131313;
             color: #e5e2e1;
         }
+
         .glow-sm {
-            text-shadow: 0 0 10px rgba(70,245,224,0.5);
+            text-shadow: 0 0 10px rgba(70, 245, 224, 0.5);
         }
+
         .glass-panel {
             background: rgba(32, 31, 31, 0.6);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(148, 141, 162, 0.2);
         }
+
         .neon-border-hover:hover {
             border-color: #46f5e0;
-            box-shadow: 0 0 20px -5px rgba(70,245,224,0.4), inset 0 0 10px -5px rgba(70,245,224,0.2);
+            box-shadow: 0 0 20px -5px rgba(70, 245, 224, 0.4), inset 0 0 10px -5px rgba(70, 245, 224, 0.2);
         }
     </style>
-  <meta name="description" content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear."/>
-  <link rel="canonical" href="https://draxengaming.com/about"/>
+    <meta name="description"
+        content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear." />
+    <link rel="canonical" href="https://draxengaming.com/about" />
 
-  <meta property="og:title" content="About Us | DRAXEN Gaming Store"/>
-  <meta property="og:description" content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear."/>
-  <meta property="og:url" content="https://draxengaming.com/about"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="DRAXEN Gaming"/>
-  <meta property="og:image" content="https://draxengaming.com/images/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="About Us | DRAXEN Gaming Store"/>
-  <meta name="twitter:description" content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear."/>
-  <meta name="twitter:image" content="https://draxengaming.com/images/og-image.jpg"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <meta property="og:title" content="About Us | DRAXEN Gaming Store" />
+    <meta property="og:description"
+        content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear." />
+    <meta property="og:url" content="https://draxengaming.com/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DRAXEN Gaming" />
+    <meta property="og:image" content="https://draxengaming.com/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | DRAXEN Gaming Store" />
+    <meta name="twitter:description"
+        content="Learn about the genesis of DRAXEN. Forged in silicon and tempered in neon, we engineer the most immersive and high-performance gaming gear." />
+    <meta name="twitter:image" content="https://draxengaming.com/images/og-image.jpg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
-<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-secondary/30 selection:text-secondary">
-<!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl transition-all duration-300 ease-out hover:scale-105 active:scale-95 flex justify-between items-center px-margin-desktop h-20">
-<div class="font-headline-lg text-headline-lg text-primary tracking-tighter"><a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
-<div class="hidden md:flex items-center gap-8">
-<ul class="flex gap-8 font-body-md text-body-md">
-<li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300" href="/">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300" href="/">Shop</a></li>
-<li><a aria-current="page" class="text-secondary border-b-2 border-secondary pb-1 hover:glow-sm hover:text-secondary duration-300" href="/about">About</a></li>
-<li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300" href="/contact">Contact</a></li>
-</ul>
-</div>
-<div class="flex items-center gap-4 text-secondary">
-<a href="/cart"><a href="/cart"><button aria-label="shopping_cart" class="hover:glow-sm hover:text-secondary duration-300 transition-colors">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
-</button></a></a>
-<button aria-label="search" class="hover:glow-sm hover:text-secondary duration-300 transition-colors">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
-</button>
-</div>
-</nav>
-<main class="flex-grow pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[614px] flex items-center justify-center px-margin-desktop overflow-hidden border-b border-outline-variant/30">
-<!-- Background Image -->
-<div class="absolute inset-0 z-0">
-<img alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="A sprawling, high-tech server room and esports training facility bathed in deep shadows and piercing neon blue and magenta lighting. The aesthetic is heavily cyberpunk, featuring sleek obsidian surfaces, glowing cooling tubes, and banks of high-end computational hardware stretching into the distance. The atmosphere feels intensely energetic, competitive, and technologically supreme, perfect for an elite gaming brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRl2f7pN4BqN9kXRjfX8WhnNYJ_3JyLDLWzIcljQKjW4vMm0tzW_X1aDWiTPvyk6rQ35uBnPCr1C5NKgqvqlf8p2EF77S35CLUeW_TMX1huyPQpRd0c1EpNXJFq520Qqd15P-wefKdYHC0iSJSfTPe-zOVp4oc7oIdfJ-Xa2b8En5aCcXbuHh0GlPkS0FrvrZ2hoG-6zsE5b_hJyY83WE4klSFzJorgfiWEzMGhvCM9t--FGM5er9EKtS228_UDcA6q1HjfGLW6I4"/ loading="lazy">
-<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background z-10"></div>
-</div>
-<div class="relative z-20 text-center max-w-4xl mx-auto">
-<h1 class="font-display-lg text-display-lg text-on-surface mb-6 drop-shadow-[0_0_20px_rgba(207,189,255,0.4)]">
+
+<body
+    class="font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-secondary/30 selection:text-secondary">
+    <!-- TopNavBar (Shared Component) -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl transition-all duration-300 ease-out hover:scale-105 active:scale-95 flex justify-between items-center px-margin-desktop h-20">
+        <div class="font-headline-lg text-headline-lg text-primary tracking-tighter"><a href="/"
+                class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
+        <div class="hidden md:flex items-center gap-8">
+            <ul class="flex gap-8 font-body-md text-body-md">
+                <li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300"
+                        href="/">Home</a></li>
+                <li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300"
+                        href="/accessories">Accessories</a></li>
+                <li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300"
+                        href="/pc-parts">PC Parts</a></li>
+                <li><a aria-current="page"
+                        class="text-secondary border-b-2 border-secondary pb-1 hover:glow-sm hover:text-secondary duration-300"
+                        href="/about">About</a></li>
+                <li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300"
+                        href="/community">Community</a></li>
+                <li><a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm duration-300"
+                        href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="flex items-center gap-4 text-secondary">
+            <a href="/cart"><button aria-label="shopping_cart"
+                    class="hover:glow-sm hover:text-secondary duration-300 transition-colors">
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+                </button></a>
+            <button aria-label="search" class="hover:glow-sm hover:text-secondary duration-300 transition-colors">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+            </button>
+        </div>
+    </nav>
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[614px] flex items-center justify-center px-margin-desktop overflow-hidden border-b border-outline-variant/30">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+                    data-alt="A sprawling, high-tech server room and esports training facility bathed in deep shadows and piercing neon blue and magenta lighting. The aesthetic is heavily cyberpunk, featuring sleek obsidian surfaces, glowing cooling tubes, and banks of high-end computational hardware stretching into the distance. The atmosphere feels intensely energetic, competitive, and technologically supreme, perfect for an elite gaming brand."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRl2f7pN4BqN9kXRjfX8WhnNYJ_3JyLDLWzIcljQKjW4vMm0tzW_X1aDWiTPvyk6rQ35uBnPCr1C5NKgqvqlf8p2EF77S35CLUeW_TMX1huyPQpRd0c1EpNXJFq520Qqd15P-wefKdYHC0iSJSfTPe-zOVp4oc7oIdfJ-Xa2b8En5aCcXbuHh0GlPkS0FrvrZ2hoG-6zsE5b_hJyY83WE4klSFzJorgfiWEzMGhvCM9t--FGM5er9EKtS228_UDcA6q1HjfGLW6I4"
+                    / loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background z-10">
+                </div>
+            </div>
+            <div class="relative z-20 text-center max-w-4xl mx-auto">
+                <h1
+                    class="font-display-lg text-display-lg text-on-surface mb-6 drop-shadow-[0_0_20px_rgba(207,189,255,0.4)]">
                     Beyond the <span class="text-secondary drop-shadow-[0_0_15px_rgba(70,245,224,0.6)]">Hardware</span>
-</h1>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto text-lg">
-                    We don't just build systems; we engineer unfair advantages. Draxen is the nexus where elite performance meets digital luxury.
+                </h1>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto text-lg">
+                    We don't just build systems; we engineer unfair advantages. Draxen is the nexus where elite
+                    performance meets digital luxury.
                 </p>
-</div>
-</section>
-<!-- The Genesis of Draxen (Brand Story) -->
-<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-<div class="relative group">
-<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl rounded-xl group-hover:opacity-50 transition duration-1000"></div>
-<div class="relative h-[600px] w-full rounded-xl overflow-hidden border border-outline-variant/50">
-<img alt="Genesis Lab" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="A close-up shot of an intricate, custom-built PC motherboard and cooling system inside a darkened laboratory setting. Ultraviolet and neon cyan LEDs illuminate the intricate circuitry, water-cooling blocks, and brushed metal heat sinks. The image exudes a sense of microscopic precision, raw processing power, and the meticulous craftsmanship required to build elite gaming rigs in a futuristic, glassmorphic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwnQyuNRgbRfdh_I3pvTZf3qO2Nn8D_gwJrO7lOTpmHQ3uPJ9m1mhBvxac1gdMFJwFbwZskL6w3hXzdv3AiA_W1-N1SulTXBwyd8Fo4M8cgRy1NzNjCtCqMQ7hq4fRLIxEBOir0YvlUEIlIm029GROgW7x9Gutx3zOoFZsbBKUFRYW6KITMlVkJ0EvFjwnFz0e2dpBGP7EHc_sLy-uvZfENnofXIihZA6wbbGicmCaGfzoAOJyIQcJI9ZJ7TO1aU0KFjgKUS3t7NI"/ loading="lazy">
-<div class="absolute inset-0 border border-primary/20 rounded-xl pointer-events-none"></div>
-</div>
-</div>
-<div class="glass-panel p-10 rounded-xl relative overflow-hidden">
-<!-- Decorative HUD element -->
-<div class="absolute top-0 right-0 p-4 opacity-50 font-label-sm text-tertiary">
+            </div>
+        </section>
+        <!-- The Genesis of Draxen (Brand Story) -->
+        <section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl rounded-xl group-hover:opacity-50 transition duration-1000">
+                    </div>
+                    <div class="relative h-[600px] w-full rounded-xl overflow-hidden border border-outline-variant/50">
+                        <img alt="Genesis Lab"
+                            class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            data-alt="A close-up shot of an intricate, custom-built PC motherboard and cooling system inside a darkened laboratory setting. Ultraviolet and neon cyan LEDs illuminate the intricate circuitry, water-cooling blocks, and brushed metal heat sinks. The image exudes a sense of microscopic precision, raw processing power, and the meticulous craftsmanship required to build elite gaming rigs in a futuristic, glassmorphic environment."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwnQyuNRgbRfdh_I3pvTZf3qO2Nn8D_gwJrO7lOTpmHQ3uPJ9m1mhBvxac1gdMFJwFbwZskL6w3hXzdv3AiA_W1-N1SulTXBwyd8Fo4M8cgRy1NzNjCtCqMQ7hq4fRLIxEBOir0YvlUEIlIm029GROgW7x9Gutx3zOoFZsbBKUFRYW6KITMlVkJ0EvFjwnFz0e2dpBGP7EHc_sLy-uvZfENnofXIihZA6wbbGicmCaGfzoAOJyIQcJI9ZJ7TO1aU0KFjgKUS3t7NI"
+                            / loading="lazy">
+                        <div class="absolute inset-0 border border-primary/20 rounded-xl pointer-events-none"></div>
+                    </div>
+                </div>
+                <div class="glass-panel p-10 rounded-xl relative overflow-hidden">
+                    <!-- Decorative HUD element -->
+                    <div class="absolute top-0 right-0 p-4 opacity-50 font-label-sm text-tertiary">
                         [SYS.INIT // 2042.V1]
                     </div>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-8 tracking-tight">The Genesis of Draxen</h2>
-<div class="space-y-6 text-on-surface-variant font-body-md leading-relaxed">
-<p>
-                            Born in the underground overclocking scene, Draxen started as a collective of hardware purists dissatisfied with off-the-shelf limitations. We sought the theoretical maximums—pushing silicon until it screamed, then cooling it with custom loops that looked like they belonged in a hyperdrive.
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-8 tracking-tight">The Genesis of Draxen
+                    </h2>
+                    <div class="space-y-6 text-on-surface-variant font-body-md leading-relaxed">
+                        <p>
+                            Born in the underground overclocking scene, Draxen started as a collective of hardware
+                            purists dissatisfied with off-the-shelf limitations. We sought the theoretical
+                            maximums—pushing silicon until it screamed, then cooling it with custom loops that looked
+                            like they belonged in a hyperdrive.
                         </p>
-<p>
-                            What began as a pursuit of raw framerates evolved into a philosophy of uncompromising digital aesthetics. We realized that a high-end rig isn't just a tool; it's the cockpit for your digital existence. It needs to feel as lethal as it performs.
+                        <p>
+                            What began as a pursuit of raw framerates evolved into a philosophy of uncompromising
+                            digital aesthetics. We realized that a high-end rig isn't just a tool; it's the cockpit for
+                            your digital existence. It needs to feel as lethal as it performs.
                         </p>
-<div class="pt-6 border-t border-outline-variant/30 flex items-center gap-4">
-<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">memory</span>
-<span class="font-label-sm text-secondary tracking-widest uppercase">Forged in Silicon. Tempered in Neon.</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Mission Statement -->
-<section class="py-24 relative overflow-hidden bg-surface-container-low">
-<!-- Grid pattern background -->
-<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#494456 1px, transparent 1px), linear-gradient(90deg, #494456 1px, transparent 1px); background-size: 40px 40px;"></div>
-<div class="max-w-4xl mx-auto px-margin-desktop text-center relative z-10">
-<span class="material-symbols-outlined text-tertiary text-5xl mb-6 drop-shadow-[0_0_10px_rgba(255,171,243,0.5)]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<h3 class="font-display-lg text-display-lg text-on-surface mb-8">
-                    To engineer the most <span class="text-tertiary drop-shadow-[0_0_15px_rgba(255,171,243,0.6)]">immersive</span> and uncompromising hardware ecosystems for the modern digital gladiator.
+                        <div class="pt-6 border-t border-outline-variant/30 flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">memory</span>
+                            <span class="font-label-sm text-secondary tracking-widest uppercase">Forged in Silicon.
+                                Tempered in Neon.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission Statement -->
+        <section class="py-24 relative overflow-hidden bg-surface-container-low">
+            <!-- Grid pattern background -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none"
+                style="background-image: linear-gradient(#494456 1px, transparent 1px), linear-gradient(90deg, #494456 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+            <div class="max-w-4xl mx-auto px-margin-desktop text-center relative z-10">
+                <span
+                    class="material-symbols-outlined text-tertiary text-5xl mb-6 drop-shadow-[0_0_10px_rgba(255,171,243,0.5)]"
+                    style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                <h3 class="font-display-lg text-display-lg text-on-surface mb-8">
+                    To engineer the most <span
+                        class="text-tertiary drop-shadow-[0_0_15px_rgba(255,171,243,0.6)]">immersive</span> and
+                    uncompromising hardware ecosystems for the modern digital gladiator.
                 </h3>
-</div>
-</section>
-<!-- Why Choose Us Grid -->
-<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-16 tracking-tight">System Specifications</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
-<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-secondary transition-colors">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">speed</span>
-</div>
-<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Zero Bottlenecks</h4>
-<p class="font-body-md text-on-surface-variant flex-grow">Every build is mathematically optimized to ensure zero component latency. We pair the exact right GPU with the perfect CPU architecture for flawless frame delivery.</p>
-</div>
-<!-- Card 2 -->
-<div class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
-<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-primary transition-colors group-hover:border-secondary">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">architecture</span>
-</div>
-<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Bespoke Aesthetics</h4>
-<p class="font-body-md text-on-surface-variant flex-grow">Your rig should look as aggressive as your playstyle. From custom laser-etched glass to synchronized ARGB light paths, we build art pieces that happen to render 4K.</p>
-</div>
-<!-- Card 3 -->
-<div class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
-<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-tertiary transition-colors group-hover:border-secondary">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">support_agent</span>
-</div>
-<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Elite Vanguard Support</h4>
-<p class="font-body-md text-on-surface-variant flex-grow">Direct access to our Level 3 hardware engineers. No scripts, no waiting. If your system falters during a tournament, we are your immediate tactical backup.</p>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer (Shared Component) -->
-<footer class="bg-surface-container-highest/50 backdrop-blur-md text-tertiary font-label-sm text-label-sm w-full mt-auto border-t border-primary/20 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12">
-<div class="font-headline-lg text-headline-lg text-primary md:col-span-1 mb-8 md:mb-0"><a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
-<div class="flex flex-col gap-4 md:col-span-2">
-<nav class="flex flex-col md:flex-row gap-6 text-on-surface-variant">
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Discord</a>
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">YouTube</a>
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="tel:03059900668">03059900668</a>
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="mailto:ahsonsaqib0708@gmail.com">ahsonsaqib0708@gmail.com</a>
-</nav>
-</div>
-<div class="md:col-span-1 text-on-surface-variant opacity-80 flex items-end justify-start md:justify-end mt-8 md:mt-0">
+            </div>
+        </section>
+        <!-- Why Choose Us Grid -->
+        <section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-center text-primary mb-16 tracking-tight">System
+                Specifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-secondary transition-colors">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-variation-settings: 'FILL' 1;">speed</span>
+                    </div>
+                    <h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Zero Bottlenecks
+                    </h4>
+                    <p class="font-body-md text-on-surface-variant flex-grow">Every build is mathematically optimized to
+                        ensure zero component latency. We pair the exact right GPU with the perfect CPU architecture for
+                        flawless frame delivery.</p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-primary transition-colors group-hover:border-secondary">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-variation-settings: 'FILL' 1;">architecture</span>
+                    </div>
+                    <h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Bespoke Aesthetics
+                    </h4>
+                    <p class="font-body-md text-on-surface-variant flex-grow">Your rig should look as aggressive as your
+                        playstyle. From custom laser-etched glass to synchronized ARGB light paths, we build art pieces
+                        that happen to render 4K.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="glass-panel p-8 rounded-xl transition-all duration-300 neon-border-hover group flex flex-col h-full">
+                    <div
+                        class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:border-tertiary transition-colors group-hover:border-secondary">
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-variation-settings: 'FILL' 1;">support_agent</span>
+                    </div>
+                    <h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">Elite Vanguard
+                        Support</h4>
+                    <p class="font-body-md text-on-surface-variant flex-grow">Direct access to our Level 3 hardware
+                        engineers. No scripts, no waiting. If your system falters during a tournament, we are your
+                        immediate tactical backup.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer (Shared Component) -->
+    <footer
+        class="bg-surface-container-highest/50 backdrop-blur-md text-tertiary font-label-sm text-label-sm w-full mt-auto border-t border-primary/20 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12">
+        <div class="font-headline-lg text-headline-lg text-primary md:col-span-1 mb-8 md:mb-0"><a href="/"
+                class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
+        <div class="flex flex-col gap-4 md:col-span-2">
+            <nav class="flex flex-col md:flex-row gap-6 text-on-surface-variant">
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="#">Discord</a>
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="#">YouTube</a>
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="tel:03059900668">03059900668</a>
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="mailto:ahsonsaqib0708@gmail.com">ahsonsaqib0708@gmail.com</a>
+            </nav>
+        </div>
+        <div
+            class="md:col-span-1 text-on-surface-variant opacity-80 flex items-end justify-start md:justify-end mt-8 md:mt-0">
             © 2024 Draxen Gaming Store. All Rights Reserved.
         </div>
-</footer>
-  <script src="/shared.js"></script>
-</body></html>
+    </footer>
+    <script src="/shared.js"></script>
+</body>
+
+</html>

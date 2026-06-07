@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Product Specifications | DRAXEN Gaming Store</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap&amp;family=JetBrains+Mono:wght@500&display=swap&amp;family=Inter:wght@40&display=swap0&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product Specifications | DRAXEN Gaming Store</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap&amp;family=JetBrains+Mono:wght@500&display=swap&amp;family=Inter:wght@40&display=swap0&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..&display=swap1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -93,208 +101,320 @@
             }
         }
     </script>
-<style>
-        body { background-color: theme('colors.background'); color: theme('colors.on-background'); overflow-x: hidden; }
-        .glass-panel { background: rgba(19, 19, 19, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(70, 245, 224, 0.2); }
-        .glow-button { background-color: theme('colors.primary-container'); transition: all 0.3s ease; box-shadow: 0 0 15px rgba(98, 0, 238, 0.5); }
-        .glow-button:hover { box-shadow: 0 0 25px rgba(98, 0, 238, 0.8), 0 0 5px theme('colors.secondary'); border: 1px solid theme('colors.secondary'); transform: scale(1.02); }
-        .neon-text { text-shadow: 0 0 10px rgba(70, 245, 224, 0.5); }
-        .spec-chip { background-color: theme('colors.surface-container'); border: 1px solid theme('colors.outline'); }
-        .spec-chip:hover { border-color: theme('colors.secondary'); box-shadow: 0 0 10px rgba(70, 245, 224, 0.3); }
-        .cyber-line { height: 1px; background: linear-gradient(90deg, transparent, theme('colors.secondary'), transparent); }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: theme('colors.background'); }
-        ::-webkit-scrollbar-thumb { background: theme('colors.surface-variant'); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: theme('colors.secondary'); }
-    </style>
-  <meta name="description" content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications."/>
-  <link rel="canonical" href="https://draxengaming.com/product-details"/>
+    <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow-x: hidden;
+        }
 
-  <meta property="og:title" content="Product Specifications | DRAXEN Gaming Store"/>
-  <meta property="og:description" content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications."/>
-  <meta property="og:url" content="https://draxengaming.com/product-details"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="DRAXEN Gaming"/>
-  <meta property="og:image" content="https://draxengaming.com/images/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Product Specifications | DRAXEN Gaming Store"/>
-  <meta name="twitter:description" content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications."/>
-  <meta name="twitter:image" content="https://draxengaming.com/images/og-image.jpg"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(70, 245, 224, 0.2);
+        }
+
+        .glow-button {
+            background-color: theme('colors.primary-container');
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(98, 0, 238, 0.5);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(98, 0, 238, 0.8), 0 0 5px theme('colors.secondary');
+            border: 1px solid theme('colors.secondary');
+            transform: scale(1.02);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(70, 245, 224, 0.5);
+        }
+
+        .spec-chip {
+            background-color: theme('colors.surface-container');
+            border: 1px solid theme('colors.outline');
+        }
+
+        .spec-chip:hover {
+            border-color: theme('colors.secondary');
+            box-shadow: 0 0 10px rgba(70, 245, 224, 0.3);
+        }
+
+        .cyber-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, theme('colors.secondary'), transparent);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: theme('colors.background');
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant');
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.secondary');
+        }
+    </style>
+    <meta name="description"
+        content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications." />
+    <link rel="canonical" href="https://draxengaming.com/product-details" />
+
+    <meta property="og:title" content="Product Specifications | DRAXEN Gaming Store" />
+    <meta property="og:description"
+        content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications." />
+    <meta property="og:url" content="https://draxengaming.com/product-details" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DRAXEN Gaming" />
+    <meta property="og:image" content="https://draxengaming.com/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Product Specifications | DRAXEN Gaming Store" />
+    <meta name="twitter:description"
+        content="Deep dive into product features, compatibility, benchmarks, and detailed technical specifications." />
+    <meta name="twitter:image" content="https://draxengaming.com/images/og-image.jpg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
+
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl transition-all duration-300 ease-out">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
-<!-- Logo -->
-<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter"><a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
-<!-- Desktop Nav -->
-<div class="hidden md:flex space-x-8 items-center font-body-md text-body-md">
-<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300" href="/">Home</a>
-<a class="text-secondary border-b-2 border-secondary pb-1 transition-colors hover:glow-sm hover:scale-105 duration-300" href="/">Shop</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300" href="/about">About</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300" href="/contact">Contact</a>
-</div>
-<!-- Trailing Actions -->
-<div class="flex space-x-6 items-center">
-<button class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-105 duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
-</button>
-<button class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-105 duration-300 relative">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
-<span class="absolute -top-1 -right-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center">2</span>
-</button>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-on-surface-variant hover:text-secondary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</nav>
-<!-- Main Content Canvas -->
-<main class="flex-grow pt-28 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-<!-- Product Hero Section (Bento Grid Style) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-16">
-<!-- Image Gallery (Left - 7 cols) -->
-<div class="lg:col-span-7 flex flex-col gap-4">
-<div class="glass-panel rounded-xl overflow-hidden aspect-video relative group">
-<img alt="High-end mechanical gaming keyboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro, ultra-detailed shot of a high-end mechanical gaming keyboard resting on a sleek obsidian desk. Vibrant, neon cyberpunk RGB lighting emanates from beneath the dark, translucent keycaps, casting sharp cyan and deep magenta glows across the surface. The scene is illuminated by dramatic, moody rim lighting that highlights the brushed aluminum chassis. The aesthetic is extremely premium, high-tech, and immersive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOWBOUG1rUAFbWqTIsap-97oLlTRBhLDIw6IiclJ0aLMzsH1CEbjqhgbe9bi2AXopKtzoODyuZS_uK8TA551Fx8YEBr6kATcRDYBOG1atg4Ln5oOZt4FBBNNSLpjyzPuvV5UIqGWz9PcnwrSyNjvv_IPFTh9az3f3IdwNztw-EBc7f6_4hd4z8dSjyyDGYLoJssIAw6CsQgrooURvy6f4Usl1Plknh4OSbaJBLOsV5G8VI1szzDV-7ch0ssAVG8ZlpqLjR0jGdhkA"/ loading="lazy">
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none"></div>
-</div>
-<!-- Thumbnails -->
-<div class="grid grid-cols-4 gap-4">
-<div class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer border-secondary">
-<img alt="Keyboard top view" class="w-full h-full object-cover opacity-100 hover:opacity-80 transition-opacity" data-alt="Top down view of a dark mechanical keyboard with bright neon blue and purple RGB lighting against a black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbmyrcTM-DjxfcwbpokaAxyi77znlZ-3NZKQLHV0C--KYJRUayiQwic4MWUaZVV4Vg6KSVabFOlL0QSUgdijZjFAQVNv3DqtG4EqBkjGpE04dxzZnHmoEoyLigWYYdajRAhD5ZoVsL3QssI3Ku-apB-C2oCu6aHt0w-9OHLhcuIZTZSesISynfxBgFjIIIVP6DKCKN2jmrrh1K9NvCv6lAWVuI_QsWwhi2nVx644VdFPd5cFb9EQJwEsCJBtJEUnA-Yn4BeHr0fuw"/ loading="lazy">
-</div>
-<div class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
-<img alt="Keyboard detail" class="w-full h-full object-cover" data-alt="Close up shot of mechanical keyboard switches glowing green and blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8MOJj5LT3EmPNGaUk2ERhzpgP6muvUNo9MfP6m2OedCNiSlsKJYZvVSYI2BKWVrdEgxBXY-3U__PS9_-aFRYr6BB4F8948pgD73gEBm8HjhSuozrO225JMKsJmtM7BlEZScDIs1iRHrP-IWtXTF7YBIcLrcX3xb3EqySiZcQvnX32vdREpohxdZosB8aPWfnAqhQlqkqCnp7z4oXndXRd_oegbiV05Bl8lOdgfP7QveT9Gbe_j8-5u4MXJaeIJxXjEuA6iBjPM3E"/ loading="lazy">
-</div>
-<div class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
-<img alt="Keyboard side angle" class="w-full h-full object-cover" data-alt="Side profile of a premium gaming keyboard showing its slim profile and glowing base." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOKfES4jTTwmCln-CYEu48bcRYZQy-9LKnqhxRmQGK66lNoRWH7xBneQtptWOIlog9QiUs_Nq6707aOYEgRoCuWWrPZ7R0KnJLw5AN1Evh_19iamiDCsOuMP3mbxp_e2NuL30Quj44kXfeGkVyo9VAicj8HZuHw_0sovZ1YJRITJbG5z3RXBbbuxkMKQKxR9ieNWpLD6IO4u_yask07x-IZjVkn3Sn9szfCvFh-LqO3sjCTEZPgNxIyrCXHuVnb6W4l4eAbglqbPY"/ loading="lazy">
-</div>
-<div class="glass-panel rounded-lg overflow-hidden aspect-square flex items-center justify-center cursor-pointer hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-secondary text-4xl">play_circle</span>
-</div>
-</div>
-</div>
-<!-- Product Info (Right - 5 cols) -->
-<div class="lg:col-span-5 flex flex-col justify-between glass-panel rounded-xl p-8">
-<div>
-<div class="flex justify-between items-start mb-2">
-<span class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase">In Stock // Next Gen</span>
-<div class="flex items-center text-secondary">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="ml-1 font-label-sm text-label-sm">4.9 (128)</span>
-</div>
-</div>
-<h1 class="font-display-lg text-display-lg text-primary mb-4 neon-text">Void Nexus Pro</h1>
-<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-6">$249.99</p>
-<p class="text-on-surface-variant mb-8">
-                        The ultimate mechanical precision instrument. Engineered with hyper-responsive optical-mechanical switches, aircraft-grade aluminum chassis, and per-key reactive quantum RGB. Dominate the darkspace.
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-secondary/30 shadow-[0_2px_15px_-3px_rgba(70,245,224,0.3)] shadow-2xl transition-all duration-300 ease-out">
+        <div
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+            <!-- Logo -->
+            <div
+                class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter">
+                <a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 items-center font-body-md text-body-md">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/">Home</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/accessories">Accessories</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/pc-parts">PC Parts</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/about">About</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/community">Community</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors hover:glow-sm hover:scale-105 duration-300"
+                    href="/contact">Contact</a>
+            </div>
+            <!-- Trailing Actions -->
+            <div class="flex space-x-6 items-center">
+                <button
+                    class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-105 duration-300">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+                </button>
+                <button
+                    class="text-on-surface-variant hover:text-secondary transition-colors hover:scale-105 duration-300 relative">
+                    <span class="material-symbols-outlined"
+                        style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+                    <span
+                        class="absolute -top-1 -right-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-4 h-4 flex items-center justify-center">2</span>
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button class="md:hidden text-on-surface-variant hover:text-secondary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-28 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+        <!-- Product Hero Section (Bento Grid Style) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-16">
+            <!-- Image Gallery (Left - 7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <div class="glass-panel rounded-xl overflow-hidden aspect-video relative group">
+                    <img alt="High-end mechanical gaming keyboard"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="A macro, ultra-detailed shot of a high-end mechanical gaming keyboard resting on a sleek obsidian desk. Vibrant, neon cyberpunk RGB lighting emanates from beneath the dark, translucent keycaps, casting sharp cyan and deep magenta glows across the surface. The scene is illuminated by dramatic, moody rim lighting that highlights the brushed aluminum chassis. The aesthetic is extremely premium, high-tech, and immersive."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOWBOUG1rUAFbWqTIsap-97oLlTRBhLDIw6IiclJ0aLMzsH1CEbjqhgbe9bi2AXopKtzoODyuZS_uK8TA551Fx8YEBr6kATcRDYBOG1atg4Ln5oOZt4FBBNNSLpjyzPuvV5UIqGWz9PcnwrSyNjvv_IPFTh9az3f3IdwNztw-EBc7f6_4hd4z8dSjyyDGYLoJssIAw6CsQgrooURvy6f4Usl1Plknh4OSbaJBLOsV5G8VI1szzDV-7ch0ssAVG8ZlpqLjR0jGdhkA"
+                        / loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none">
+                    </div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer border-secondary">
+                        <img alt="Keyboard top view"
+                            class="w-full h-full object-cover opacity-100 hover:opacity-80 transition-opacity"
+                            data-alt="Top down view of a dark mechanical keyboard with bright neon blue and purple RGB lighting against a black background."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbmyrcTM-DjxfcwbpokaAxyi77znlZ-3NZKQLHV0C--KYJRUayiQwic4MWUaZVV4Vg6KSVabFOlL0QSUgdijZjFAQVNv3DqtG4EqBkjGpE04dxzZnHmoEoyLigWYYdajRAhD5ZoVsL3QssI3Ku-apB-C2oCu6aHt0w-9OHLhcuIZTZSesISynfxBgFjIIIVP6DKCKN2jmrrh1K9NvCv6lAWVuI_QsWwhi2nVx644VdFPd5cFb9EQJwEsCJBtJEUnA-Yn4BeHr0fuw"
+                            / loading="lazy">
+                    </div>
+                    <div
+                        class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+                        <img alt="Keyboard detail" class="w-full h-full object-cover"
+                            data-alt="Close up shot of mechanical keyboard switches glowing green and blue."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8MOJj5LT3EmPNGaUk2ERhzpgP6muvUNo9MfP6m2OedCNiSlsKJYZvVSYI2BKWVrdEgxBXY-3U__PS9_-aFRYr6BB4F8948pgD73gEBm8HjhSuozrO225JMKsJmtM7BlEZScDIs1iRHrP-IWtXTF7YBIcLrcX3xb3EqySiZcQvnX32vdREpohxdZosB8aPWfnAqhQlqkqCnp7z4oXndXRd_oegbiV05Bl8lOdgfP7QveT9Gbe_j8-5u4MXJaeIJxXjEuA6iBjPM3E"
+                            / loading="lazy">
+                    </div>
+                    <div
+                        class="glass-panel rounded-lg overflow-hidden aspect-square cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+                        <img alt="Keyboard side angle" class="w-full h-full object-cover"
+                            data-alt="Side profile of a premium gaming keyboard showing its slim profile and glowing base."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOKfES4jTTwmCln-CYEu48bcRYZQy-9LKnqhxRmQGK66lNoRWH7xBneQtptWOIlog9QiUs_Nq6707aOYEgRoCuWWrPZ7R0KnJLw5AN1Evh_19iamiDCsOuMP3mbxp_e2NuL30Quj44kXfeGkVyo9VAicj8HZuHw_0sovZ1YJRITJbG5z3RXBbbuxkMKQKxR9ieNWpLD6IO4u_yask07x-IZjVkn3Sn9szfCvFh-LqO3sjCTEZPgNxIyrCXHuVnb6W4l4eAbglqbPY"
+                            / loading="lazy">
+                    </div>
+                    <div
+                        class="glass-panel rounded-lg overflow-hidden aspect-square flex items-center justify-center cursor-pointer hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-secondary text-4xl">play_circle</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Info (Right - 5 cols) -->
+            <div class="lg:col-span-5 flex flex-col justify-between glass-panel rounded-xl p-8">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase">In Stock //
+                            Next Gen</span>
+                        <div class="flex items-center text-secondary">
+                            <span class="material-symbols-outlined text-sm"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="ml-1 font-label-sm text-label-sm">4.9 (128)</span>
+                        </div>
+                    </div>
+                    <h1 class="font-display-lg text-display-lg text-primary mb-4 neon-text">Void Nexus Pro</h1>
+                    <p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-6">$249.99</p>
+                    <p class="text-on-surface-variant mb-8">
+                        The ultimate mechanical precision instrument. Engineered with hyper-responsive
+                        optical-mechanical switches, aircraft-grade aluminum chassis, and per-key reactive quantum RGB.
+                        Dominate the darkspace.
                     </p>
-<!-- Spec Chips -->
-<div class="flex flex-wrap gap-3 mb-10">
-<div class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
-<span class="material-symbols-outlined text-[16px] mr-2 text-secondary">speed</span> Optical Switches
+                    <!-- Spec Chips -->
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <div
+                            class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
+                            <span class="material-symbols-outlined text-[16px] mr-2 text-secondary">speed</span> Optical
+                            Switches
                         </div>
-<div class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
-<span class="material-symbols-outlined text-[16px] mr-2 text-tertiary">bolt</span> 0.2ms Latency
+                        <div
+                            class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
+                            <span class="material-symbols-outlined text-[16px] mr-2 text-tertiary">bolt</span> 0.2ms
+                            Latency
                         </div>
-<div class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
-<span class="material-symbols-outlined text-[16px] mr-2 text-secondary">palette</span> Quantum RGB
+                        <div
+                            class="spec-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface flex items-center transition-colors">
+                            <span class="material-symbols-outlined text-[16px] mr-2 text-secondary">palette</span>
+                            Quantum RGB
                         </div>
-</div>
-</div>
-<!-- Action Buttons -->
-<div class="flex flex-col gap-4 mt-auto">
-<button class="w-full py-4 rounded-lg bg-surface-container border border-outline hover:border-secondary text-primary font-label-sm text-label-sm uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 hover:bg-surface-container-high group">
-<span class="material-symbols-outlined group-hover:text-secondary transition-colors">add_shopping_cart</span>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex flex-col gap-4 mt-auto">
+                    <button
+                        class="w-full py-4 rounded-lg bg-surface-container border border-outline hover:border-secondary text-primary font-label-sm text-label-sm uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 hover:bg-surface-container-high group">
+                        <span
+                            class="material-symbols-outlined group-hover:text-secondary transition-colors">add_shopping_cart</span>
                         Add to Cart
                     </button>
-<button class="glow-button w-full py-4 rounded-lg text-on-primary font-headline-lg-mobile text-[18px] uppercase tracking-widest flex items-center justify-center gap-2">
-<span class="material-symbols-outlined">bolt</span>
+                    <button
+                        class="glow-button w-full py-4 rounded-lg text-on-primary font-headline-lg-mobile text-[18px] uppercase tracking-widest flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">bolt</span>
                         Buy Now
                     </button>
-</div>
-</div>
-</div>
-<div class="cyber-line mb-16 w-full"></div>
-<!-- Specifications & HUD -->
-<section class="mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-8 flex items-center">
-<span class="material-symbols-outlined text-secondary mr-3" style="font-variation-settings: 'FILL' 1;">memory</span>
+                </div>
+            </div>
+        </div>
+        <div class="cyber-line mb-16 w-full"></div>
+        <!-- Specifications & HUD -->
+        <section class="mb-16">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8 flex items-center">
+                <span class="material-symbols-outlined text-secondary mr-3"
+                    style="font-variation-settings: 'FILL' 1;">memory</span>
                 Hardware Telemetry
             </h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="glass-panel p-6 rounded-xl">
-<h3 class="font-label-sm text-label-sm text-tertiary mb-4 uppercase tracking-widest border-b border-surface-variant pb-2">Technical Specs</h3>
-<ul class="space-y-4">
-<li class="flex justify-between items-center text-sm">
-<span class="text-on-surface-variant">Actuation Force</span>
-<span class="font-label-sm text-primary">45g</span>
-</li>
-<li class="flex justify-between items-center text-sm">
-<span class="text-on-surface-variant">Keycap Material</span>
-<span class="font-label-sm text-primary">Double-shot PBT</span>
-</li>
-<li class="flex justify-between items-center text-sm">
-<span class="text-on-surface-variant">Polling Rate</span>
-<span class="font-label-sm text-primary">8000Hz</span>
-</li>
-<li class="flex justify-between items-center text-sm">
-<span class="text-on-surface-variant">Connectivity</span>
-<span class="font-label-sm text-primary">USB-C Detachable</span>
-</li>
-</ul>
-</div>
-<div class="glass-panel p-6 rounded-xl flex flex-col justify-center">
-<h3 class="font-label-sm text-label-sm text-secondary mb-6 uppercase tracking-widest">Performance Metrics</h3>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between text-xs mb-2">
-<span class="text-on-surface">Durability Rating</span>
-<span class="text-secondary font-label-sm">100M Clicks</span>
-</div>
-<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
-<div class="h-full bg-secondary w-[95%] shadow-[0_0_10px_#46f5e0]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs mb-2">
-<span class="text-on-surface">Acoustic Profile (Clicky)</span>
-<span class="text-tertiary font-label-sm">Loud</span>
-</div>
-<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex gap-[2px]">
-<div class="h-full bg-tertiary w-1/5"></div>
-<div class="h-full bg-tertiary w-1/5"></div>
-<div class="h-full bg-tertiary w-1/5"></div>
-<div class="h-full bg-tertiary w-1/5 shadow-[0_0_10px_#ffabf3]"></div>
-<div class="h-full bg-surface-variant w-1/5"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full mt-auto bg-surface-container-highest/50 backdrop-blur-md border-t border-primary/20">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto font-label-sm text-label-sm text-on-surface-variant">
-<div class="col-span-1 md:col-span-2">
-<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4"><a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
-<p class="mb-4">© 2024 Draxen Gaming Store. All Rights Reserved.</p>
-</div>
-<div class="flex flex-col space-y-3">
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Discord</a>
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">YouTube</a>
-</div>
-<div class="flex flex-col space-y-3">
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="tel:03059900668">03059900668</a>
-<a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100" href="mailto:ahsonsaqib0708@gmail.com">ahsonsaqib0708@gmail.com</a>
-</div>
-</div>
-</footer>
-  <script src="/shared.js"></script>
-</body></html>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3
+                        class="font-label-sm text-label-sm text-tertiary mb-4 uppercase tracking-widest border-b border-surface-variant pb-2">
+                        Technical Specs</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-on-surface-variant">Actuation Force</span>
+                            <span class="font-label-sm text-primary">45g</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-on-surface-variant">Keycap Material</span>
+                            <span class="font-label-sm text-primary">Double-shot PBT</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-on-surface-variant">Polling Rate</span>
+                            <span class="font-label-sm text-primary">8000Hz</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="text-on-surface-variant">Connectivity</span>
+                            <span class="font-label-sm text-primary">USB-C Detachable</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-panel p-6 rounded-xl flex flex-col justify-center">
+                    <h3 class="font-label-sm text-label-sm text-secondary mb-6 uppercase tracking-widest">Performance
+                        Metrics</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
+                                <span class="text-on-surface">Durability Rating</span>
+                                <span class="text-secondary font-label-sm">100M Clicks</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+                                <div class="h-full bg-secondary w-[95%] shadow-[0_0_10px_#46f5e0]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
+                                <span class="text-on-surface">Acoustic Profile (Clicky)</span>
+                                <span class="text-tertiary font-label-sm">Loud</span>
+                            </div>
+                            <div
+                                class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex gap-[2px]">
+                                <div class="h-full bg-tertiary w-1/5"></div>
+                                <div class="h-full bg-tertiary w-1/5"></div>
+                                <div class="h-full bg-tertiary w-1/5"></div>
+                                <div class="h-full bg-tertiary w-1/5 shadow-[0_0_10px_#ffabf3]"></div>
+                                <div class="h-full bg-surface-variant w-1/5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-auto bg-surface-container-highest/50 backdrop-blur-md border-t border-primary/20">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto font-label-sm text-label-sm text-on-surface-variant">
+            <div class="col-span-1 md:col-span-2">
+                <div
+                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">
+                    <a href="/" class="hover:text-secondary transition-colors">Draxen Gaming Store</a></div>
+                <p class="mb-4">© 2024 Draxen Gaming Store. All Rights Reserved.</p>
+            </div>
+            <div class="flex flex-col space-y-3">
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="#">Discord</a>
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="#">YouTube</a>
+            </div>
+            <div class="flex flex-col space-y-3">
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="tel:03059900668">03059900668</a>
+                <a class="hover:text-tertiary transition-colors duration-200 opacity-80 hover:opacity-100"
+                    href="mailto:ahsonsaqib0708@gmail.com">ahsonsaqib0708@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/shared.js"></script>
+</body>
+
+</html>
